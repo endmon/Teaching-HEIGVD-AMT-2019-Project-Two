@@ -1,13 +1,15 @@
-version: '2'
+version: '3'
 services:
   mysql:
     build: ../images/mysql
     environment:
       - MYSQL_ROOT_PASSWORD=adminpw
+      - MYSQL_DATABASE=user_auth
     ports:
       - "3306:3306"
     volumes:
-      - datavolume:/var/lib/mysql
+      - datavolume:/data/db
+    command: --default-authentication-plugin=mysql_native_password --secure-file-priv=""
   phpmyadmin:
     build: ../images/phpmyadmin
     environment:
