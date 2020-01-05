@@ -15,7 +15,8 @@ CREATE TABLE user (
   first_name VARCHAR(45) NOT NULL,
   last_name VARCHAR(45) NOT NULL,
   `email` VARCHAR(90) NOT NULL UNIQUE,
-  `password` VARCHAR(1000) NULL,
+  `password` VARCHAR(1000) NOT NULL,
+  `admin` BOOLEAN NOT NULL,
   PRIMARY KEY  (user_id)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
