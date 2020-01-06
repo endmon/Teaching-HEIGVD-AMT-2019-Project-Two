@@ -1,4 +1,4 @@
-package main.java.ch.heigvd.user.config;
+package ch.heigvd.user.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

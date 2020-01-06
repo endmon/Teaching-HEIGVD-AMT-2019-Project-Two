@@ -1,4 +1,4 @@
-package main.java.ch.heigvd.user;
+package ch.heigvd.user;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.ExitCodeGenerator;

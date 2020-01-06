@@ -1,4 +1,4 @@
-package main.java.ch.heigvd.user.entities;
+package ch.heigvd.user.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

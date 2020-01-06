@@ -1,4 +1,4 @@
-package main.java.ch.heigvd.user.repositories;
+package ch.heigvd.user.repositories;
 
 import main.java.ch.heigvd.user.entities.UserEntity;
 import org.springframework.data.repository.CrudRepository;

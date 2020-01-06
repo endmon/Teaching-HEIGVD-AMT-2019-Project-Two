@@ -1,49 +1,53 @@
 swagger: '2.0'
 info:
   version: '0.1.0'
-  title: my simple api
-  description: An API to demonstrate Swagger
+  title: User Api
+  description: An API to manage users
 host: localhost:8080
 basePath: /api
 schemes:
   - http
 paths:
-  /fruits:
+  /login:
     post:
-      description: create a fruit
-      operationId: createFruit
+      description: log with JWT token
+      operationId: login
       consumes:
         - application/json
       parameters:
-        - name: fruit
+        - name: userCredentials
           in: body
           required: true
           schema:
-            $ref: '#/definitions/Fruit'
+            $ref: '#/definitions/UserCredentials'
       responses:
         '201':
-          description: created
+          description: logged in
           schema:
-            type: object
-    get:
-      description: get the list of all fruits
-      operationId: getFruits
-      produces:
-        - application/json
-      responses:
-        '200':
-          description: success
-          schema:
-            type: array
-            items:
-              $ref: '#/definitions/Fruit'
+            $ref: '#/definitions/SuccessfulLogin'
 definitions:
-  Fruit:
+  User:
     type: object
     properties:
-      kind:
+      username:
         type: string
-      colour:
+      first_name:
         type: string
-      size:
+      last_name:
+        type: string
+      email:
+        type: string
+  UserCredentials:
+    type: object
+    properties:
+      username:
+        type: string
+      password:
+        type: string
+  SuccessfulLogin:
+    type: object
+    properties:
+      userID:
+        type: integer
+      JWTToken:
         type: string

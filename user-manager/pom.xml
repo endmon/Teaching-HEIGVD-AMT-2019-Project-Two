@@ -46,13 +46,13 @@
                             <language>spring</language>
                             <configOptions>
                                 <dateLibrary>joda</dateLibrary>
-                                <useBeanValidation>false</useBeanValidation>
+                                <useBeanValidation>true</useBeanValidation>
                                 <interfaceOnly>true</interfaceOnly>
                                 <delegatePattern>false</delegatePattern>
-                                <apiPackage>ch.heigvd.user.api</apiPackage>
-                                <configPackage>ch.heigvd.user.config</configPackage>
-                                <basePackage>ch.heigvd.user</basePackage>
-                                <modelPackage>ch.heigvd.user.api.model</modelPackage>
+                                <apiPackage>main.java.ch.heigvd.user.api</apiPackage>
+                                <configPackage>main.java.ch.heigvd.user.config</configPackage>
+                                <basePackage>main.java.ch.heigvd.user</basePackage>
+                                <modelPackage>main.java.ch.heigvd.user.api.model</modelPackage>
                             </configOptions>
                         </configuration>
                     </execution>
