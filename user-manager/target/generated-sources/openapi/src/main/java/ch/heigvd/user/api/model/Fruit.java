@@ -10,7 +10,7 @@ import org.openapitools.jackson.nullable.JsonNullable;
 /**
  * Fruit
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2020-01-05T20:11:35.704+01:00[Europe/Berlin]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2020-01-06T09:37:30.079+01:00[Europe/Berlin]")
 
 public class Fruit   {
   @JsonProperty("kind")

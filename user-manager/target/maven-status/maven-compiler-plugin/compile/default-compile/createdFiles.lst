@@ -1,3 +1,9 @@
-ch\heigvd\user\api\ApiUtil.class
+main\java\ch\heigvd\user\api\util\ApiOriginFilter.class
+main\java\ch\heigvd\user\entities\UserEntity.class
+main\java\ch\heigvd\user\config\HomeController.class
+main\java\ch\heigvd\user\repositories\UserRepository.class
 ch\heigvd\user\api\model\Fruit.class
+main\java\ch\heigvd\user\api\util\ApiResponseMessage.class
 ch\heigvd\user\api\FruitsApi.class
+ch\heigvd\user\api\ApiUtil.class
+main\java\ch\heigvd\user\config\SwaggerDocumentationConfig.class
