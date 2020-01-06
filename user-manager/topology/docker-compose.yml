@@ -3,7 +3,7 @@ services:
   mysql:
     build: ../images/mysql
     environment:
-      - MYSQL_ROOT_PASSWORD=adminpw
+      - MYSQL_ROOT_PASSWORD=root
       - MYSQL_DATABASE=user_auth
     ports:
       - "3306:3306"
