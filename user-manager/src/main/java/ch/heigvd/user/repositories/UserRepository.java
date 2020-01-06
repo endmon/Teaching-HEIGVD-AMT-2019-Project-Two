@@ -1,6 +1,6 @@
 package ch.heigvd.user.repositories;
 
-import main.java.ch.heigvd.user.entities.UserEntity;
+import ch.heigvd.user.entities.UserEntity;
 import org.springframework.data.repository.CrudRepository;
 
 

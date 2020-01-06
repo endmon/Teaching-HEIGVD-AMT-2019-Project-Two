@@ -13,7 +13,9 @@ import io.jsonwebtoken.*;
  */
 public class JWTHelper {
 
-    /*public static String createJWT(String id, String issuer, String subject, long ttlMillis) {
+    private static final String SECRET_KEY = "Le gâteau est un mensonge";
+
+    public static String createJWT(String id, String issuer, String subject, long ttlMillis) {
 
         //The JWT signature algorithm we will be using to sign the token
         SignatureAlgorithm signatureAlgorithm = SignatureAlgorithm.HS256;
@@ -41,5 +43,5 @@ public class JWTHelper {
 
         //Builds the JWT and serializes it to a compact, URL-safe string
         return builder.compact();
-    }*/
+    }
 }
