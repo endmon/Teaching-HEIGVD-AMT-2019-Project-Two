@@ -12,7 +12,7 @@ public class UserEntity implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private long user_id;
 
     private String first_name;
     private String last_name;
@@ -23,11 +23,11 @@ public class UserEntity implements Serializable {
 
 
     public long getId() {
-        return id;
+        return user_id;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setId(long user_id) {
+        this.user_id = user_id;
     }
 
     public String getFirst_name() {
