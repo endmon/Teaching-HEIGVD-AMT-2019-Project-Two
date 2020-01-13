@@ -7,6 +7,13 @@ host: localhost:8080
 basePath: /api
 schemes:
   - http
+parameters:
+  JWTToken:
+    in: header
+    name: jwttoken
+    description: header containing a JWT Token
+    type: string
+    required: true
 paths:
   /login:
     post:
@@ -24,30 +31,90 @@ paths:
         '201':
           description: logged in
           schema:
-            $ref: '#/definitions/SuccessfulLogin'
+            $ref: '#/definitions/JWTToken'
+        '401':
+          description: Wrong user credentials
+  /users:
+    post:
+      description: create a user
+      operationId: register
+      consumes:
+        - application/json
+      parameters:
+        - name: user
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/User'
+      responses:
+        '201':
+          description: user created
+  /users/{email}:
+    parameters:
+      - in: path
+        name: email
+        required: true
+        type: string
+      - $ref: '#/parameters/JWTToken'
+    get:
+      description: get user informations
+      operationId: getUserByEmail
+      produces:
+        - application/json
+      responses:
+        '201':
+          description: user informations
+          schema:
+            $ref: '#/definitions/User'
+        '401':
+          description: user email does not exist
+    patch:
+      description: change user informations
+      operationId: updateUser
+      consumes:
+        - application/json
+      parameters:
+        - name: user
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/User'
+      responses:
+        '201':
+          description: updated user correctly
+        '401':
+          description: could not update user
+    delete:
+      description: delete user
+      operationId: deleteUser
+      responses:
+        '201':
+          description: user deleted
+        '401':
+          description: could not delete user
 definitions:
   User:
     type: object
     properties:
-      username:
-        type: string
       first_name:
         type: string
       last_name:
         type: string
       email:
         type: string
+      password:
+        type: string
+      admin:
+        type: boolean
   UserCredentials:
     type: object
     properties:
-      username:
+      email:
         type: string
       password:
         type: string
-  SuccessfulLogin:
+  JWTToken:
     type: object
     properties:
-      userID:
-        type: integer
-      JWTToken:
+      jwttoken:
         type: string
