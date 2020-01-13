@@ -5,6 +5,8 @@ import javax.crypto.spec.SecretKeySpec;
 import javax.xml.bind.DatatypeConverter;
 import java.security.Key;
 import java.util.Date;
+
+import ch.heigvd.user.api.model.JWTToken;
 import io.jsonwebtoken.*;
 
 
@@ -15,7 +17,7 @@ public class JWTHelper {
 
     private static final String SECRET_KEY = "Le gâteau est un mensonge";
 
-    public static String createJWT(String issuer, String email, long ttlMillis, boolean admin) {
+    public static JWTToken createJWT(String email, long ttlMillis, boolean admin) {
 
         //The JWT signature algorithm we will be using to sign the token
         SignatureAlgorithm signatureAlgorithm = SignatureAlgorithm.HS256;
@@ -31,7 +33,7 @@ public class JWTHelper {
         JwtBuilder builder = Jwts.builder()
                 .setIssuedAt(now)
                 .setSubject(email)
-                .setIssuer(issuer)
+                .setIssuer("login-app")
                 .claim("admin", admin)
                 .signWith(signatureAlgorithm, signingKey);
 
@@ -42,8 +44,12 @@ public class JWTHelper {
             builder.setExpiration(exp);
         }
 
+
         //Builds the JWT and serializes it to a compact, URL-safe string
-        return builder.compact();
+        JWTToken jwtToken = new JWTToken();
+        jwtToken.setJwttoken(builder.compact());
+
+        return jwtToken;
     }
 
     public static Claims decodeJWT(String jwt) {
