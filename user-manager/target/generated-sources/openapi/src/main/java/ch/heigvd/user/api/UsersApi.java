@@ -5,6 +5,7 @@
  */
 package ch.heigvd.user.api;
 
+import ch.heigvd.user.api.model.InlineObject;
 import ch.heigvd.user.api.model.User;
 import io.swagger.annotations.*;
 import org.springframework.http.HttpStatus;
@@ -26,7 +27,7 @@ import javax.validation.constraints.*;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2020-01-13T16:47:44.084+01:00[Europe/Berlin]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2020-01-14T15:04:15.400+01:00[Europe/Berlin]")
 
 @Validated
 @Api(value = "users", description = "the users API")
@@ -35,18 +36,6 @@ public interface UsersApi {
     default Optional<NativeWebRequest> getRequest() {
         return Optional.empty();
     }
-
-    @ApiOperation(value = "", nickname = "deleteUser", notes = "delete user", tags={  })
-    @ApiResponses(value = { 
-        @ApiResponse(code = 201, message = "user deleted"),
-        @ApiResponse(code = 401, message = "could not delete user") })
-    @RequestMapping(value = "/users/{email}",
-        method = RequestMethod.DELETE)
-    default ResponseEntity<Void> deleteUser(@ApiParam(value = "",required=true) @PathVariable("email") String email,@ApiParam(value = "header containing a JWT Token" ,required=true) @RequestHeader(value="jwttoken", required=true) String jwttoken) {
-        return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
-
-    }
-
 
     @ApiOperation(value = "", nickname = "getUserByEmail", notes = "get user informations", response = User.class, tags={  })
     @ApiResponses(value = { 
@@ -70,26 +59,26 @@ public interface UsersApi {
     }
 
 
+    @ApiOperation(value = "", nickname = "patchPassword", notes = "change user password", tags={  })
+    @ApiResponses(value = { 
+        @ApiResponse(code = 201, message = "updated password correctly"),
+        @ApiResponse(code = 401, message = "could not update user") })
+    @RequestMapping(value = "/users/{email}",
+        consumes = { "application/json" },
+        method = RequestMethod.PATCH)
+    default ResponseEntity<Void> patchPassword(@ApiParam(value = "",required=true) @PathVariable("email") String email,@ApiParam(value = "header containing a JWT Token" ,required=true) @RequestHeader(value="jwttoken", required=true) String jwttoken,@ApiParam(value = "" ,required=true )  @Valid @RequestBody InlineObject user) {
+        return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
+
+    }
+
+
     @ApiOperation(value = "", nickname = "register", notes = "create a user", tags={  })
     @ApiResponses(value = { 
         @ApiResponse(code = 201, message = "user created") })
     @RequestMapping(value = "/users",
         consumes = { "application/json" },
         method = RequestMethod.POST)
-    default ResponseEntity<Void> register(@ApiParam(value = "" ,required=true )  @Valid @RequestBody User user) {
-        return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
-
-    }
-
-
-    @ApiOperation(value = "", nickname = "updateUser", notes = "change user informations", tags={  })
-    @ApiResponses(value = { 
-        @ApiResponse(code = 201, message = "updated user correctly"),
-        @ApiResponse(code = 401, message = "could not update user") })
-    @RequestMapping(value = "/users/{email}",
-        consumes = { "application/json" },
-        method = RequestMethod.PATCH)
-    default ResponseEntity<Void> updateUser(@ApiParam(value = "",required=true) @PathVariable("email") String email,@ApiParam(value = "header containing a JWT Token" ,required=true) @RequestHeader(value="jwttoken", required=true) String jwttoken,@ApiParam(value = "" ,required=true )  @Valid @RequestBody User user) {
+    default ResponseEntity<Void> register(@ApiParam(value = "header containing a JWT Token" ,required=true) @RequestHeader(value="jwttoken", required=true) String jwttoken,@ApiParam(value = "" ,required=true )  @Valid @RequestBody User user) {
         return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
 
     }

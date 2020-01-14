@@ -35,6 +35,8 @@ paths:
         '401':
           description: Wrong user credentials
   /users:
+    parameters:
+      - $ref: '#/parameters/JWTToken'
     post:
       description: create a user
       operationId: register
@@ -69,8 +71,8 @@ paths:
         '401':
           description: user email does not exist
     patch:
-      description: change user informations
-      operationId: updateUser
+      description: change user password
+      operationId: patchPassword
       consumes:
         - application/json
       parameters:
@@ -78,20 +80,14 @@ paths:
           in: body
           required: true
           schema:
-            $ref: '#/definitions/User'
+            properties:
+              password:
+                type: string
       responses:
         '201':
-          description: updated user correctly
+          description: updated password correctly
         '401':
           description: could not update user
-    delete:
-      description: delete user
-      operationId: deleteUser
-      responses:
-        '201':
-          description: user deleted
-        '401':
-          description: could not delete user
 definitions:
   User:
     type: object

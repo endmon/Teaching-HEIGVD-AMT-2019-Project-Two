@@ -14,6 +14,7 @@ ch\heigvd\user\config\SwaggerDocumentationConfig.class
 ch\heigvd\user\repositories\UserRepository.class
 ch\heigvd\user\api\util\ApiOriginFilter.class
 ch\heigvd\user\Swagger2SpringBoot$ExitException.class
+ch\heigvd\user\api\model\InlineObject.class
 ch\heigvd\user\api\LoginApi.class
 ch\heigvd\user\entities\UserEntity.class
 ch\heigvd\user\api\endpoints\LoginApiController.class
