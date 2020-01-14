@@ -56,15 +56,28 @@ public class UsersApiController implements UsersApi {
         }
 
         return new ResponseEntity<User>(HttpStatus.NOT_IMPLEMENTED);
-    }
-
-    public ResponseEntity<Void> patchPassword(@ApiParam(value = "",required=true) @PathVariable("email") String email,@ApiParam(value = "header containing a JWT Token" ,required=true) @RequestHeader(value="jwttoken", required=true) String jwttoken,@ApiParam(value = "" ,required=true )  @Valid @RequestBody User user) {
-        String accept = request.getHeader("Accept");
-        return new ResponseEntity<Void>(HttpStatus.NOT_IMPLEMENTED);
     }*/
 
-    /*public ResponseEntity<Void> register(@ApiParam(value = "header containing a JWT Token" ,required=true) @RequestHeader(value="jwttoken", required=true) String jwttoken,@ApiParam(value = "" ,required=true )  @Valid @RequestBody User user) {
-        Claims claims = jwtHelper.decodeJWT(jwttoken);
+    public ResponseEntity<Void> patchPassword(@ApiParam(value = "",required=true) @PathVariable("email") String email,@ApiParam(value = "header containing a JWT Token" ,required=true) @RequestHeader(value="jwttoken", required=true) String jwttoken,@ApiParam(value = "" ,required=true )  @Valid @RequestBody User user) {
+        Claims claims = (Claims) httpServletRequest.getAttribute("claims");
+
+        if((claims.get("admin") == true) || email.equals(claims.getSubject())){
+
+            UserEntity usr = userRepository.findByEmail(email);
+
+            if(usr != null){
+                usr.setPassword(utils.hashPassword(user.getPassword()));
+                userRepository.save(usr);
+                return ResponseEntity.status(HttpStatus.CREATED).build();
+            }
+        }
+        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+    }
+
+    public ResponseEntity<Void> register(@ApiParam(value = "header containing a JWT Token" ,required=true) @RequestHeader(value="jwttoken", required=true) String jwttoken,@ApiParam(value = "" ,required=true )  @Valid @RequestBody User user) {
+
+        Claims claims = (Claims) httpServletRequest.getAttribute("claims");
+
         if(claims.get("admin") == true){
             UserEntity usr = new UserEntity();
             usr.setAdmin(user.getAdmin());
@@ -75,8 +88,8 @@ public class UsersApiController implements UsersApi {
             userRepository.save(usr);
             return ResponseEntity.status(HttpStatus.CREATED).build();
         }
-        return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
-    }*/
+        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+    }
 
 
 }

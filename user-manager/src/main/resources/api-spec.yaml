@@ -51,6 +51,8 @@ paths:
       responses:
         '201':
           description: user created
+        '401':
+          description: request not permitted
   /users/{email}:
     parameters:
       - in: path
