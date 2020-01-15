@@ -24,3 +24,5 @@ CREATE TABLE user (
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+LOAD DATA LOCAL INFILE '/docker-entrypoint-initdb.d/user_data.csv' INTO TABLE user_auth.user FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n' (first_name, last_name, email, password, admin);

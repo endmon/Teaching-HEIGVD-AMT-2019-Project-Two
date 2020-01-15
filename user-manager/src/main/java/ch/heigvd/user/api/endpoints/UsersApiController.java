@@ -25,14 +25,12 @@ import javax.servlet.http.HttpServletRequest;
 @Controller
 public class UsersApiController implements UsersApi {
 
+    Utils utils = new Utils();
+
     @Autowired
     UserRepository userRepository;
 
-    @Autowired
-    JWTHelper jwtHelper;
-
-    @Autowired
-    Utils utils;
+    JWTHelper jwtHelper = new JWTHelper();
 
     @Autowired
     HttpServletRequest httpServletRequest;

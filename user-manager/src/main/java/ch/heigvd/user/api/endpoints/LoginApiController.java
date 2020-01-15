@@ -26,11 +26,9 @@ public class LoginApiController implements LoginApi {
     @Autowired
     UserRepository userRepository;
 
-    @Autowired
-    Utils utils;
+    JWTHelper jwtHelper = new JWTHelper();
 
-    @Autowired
-    JWTHelper jwtHelper;
+    Utils utils = new Utils();
 
     public ResponseEntity<JWTToken> login(@ApiParam(value = "" ,required=true )  @Valid @RequestBody UserCredentials userCredentials) {
 

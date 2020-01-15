@@ -12,7 +12,7 @@ services:
   phpmyadmin:
     build: ../images/phpmyadmin
     environment:
-      - MYSQL_ROOT_PASSWORD=adminpw
+      - MYSQL_ROOT_PASSWORD=root
     ports:
       - "6060:80"
     links:
