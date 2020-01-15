@@ -71,7 +71,7 @@ paths:
           schema:
             $ref: '#/definitions/User'
         '401':
-          description: user email does not exist
+          description: unauthorized to check user
     patch:
       description: change user password
       operationId: patchPassword
@@ -89,7 +89,7 @@ paths:
         '201':
           description: updated password correctly
         '401':
-          description: could not update user
+          description: unauthorized to change password
 definitions:
   User:
     type: object

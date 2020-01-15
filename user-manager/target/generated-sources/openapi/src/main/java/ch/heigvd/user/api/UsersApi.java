@@ -27,7 +27,7 @@ import javax.validation.constraints.*;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2020-01-14T15:04:15.400+01:00[Europe/Berlin]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2020-01-15T09:42:18.632+01:00[Europe/Berlin]")
 
 @Validated
 @Api(value = "users", description = "the users API")
@@ -40,7 +40,7 @@ public interface UsersApi {
     @ApiOperation(value = "", nickname = "getUserByEmail", notes = "get user informations", response = User.class, tags={  })
     @ApiResponses(value = { 
         @ApiResponse(code = 201, message = "user informations", response = User.class),
-        @ApiResponse(code = 401, message = "user email does not exist") })
+        @ApiResponse(code = 401, message = "unauthorized to check user") })
     @RequestMapping(value = "/users/{email}",
         produces = { "application/json" }, 
         method = RequestMethod.GET)
@@ -62,7 +62,7 @@ public interface UsersApi {
     @ApiOperation(value = "", nickname = "patchPassword", notes = "change user password", tags={  })
     @ApiResponses(value = { 
         @ApiResponse(code = 201, message = "updated password correctly"),
-        @ApiResponse(code = 401, message = "could not update user") })
+        @ApiResponse(code = 401, message = "unauthorized to change password") })
     @RequestMapping(value = "/users/{email}",
         consumes = { "application/json" },
         method = RequestMethod.PATCH)
@@ -74,7 +74,8 @@ public interface UsersApi {
 
     @ApiOperation(value = "", nickname = "register", notes = "create a user", tags={  })
     @ApiResponses(value = { 
-        @ApiResponse(code = 201, message = "user created") })
+        @ApiResponse(code = 201, message = "user created"),
+        @ApiResponse(code = 401, message = "request not permitted") })
     @RequestMapping(value = "/users",
         consumes = { "application/json" },
         method = RequestMethod.POST)
