@@ -27,7 +27,7 @@ import javax.validation.constraints.*;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2020-01-17T12:43:47.497+01:00[Europe/Berlin]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2020-01-17T14:26:49.293+01:00[Europe/Berlin]")
 
 @Validated
 @Api(value = "users", description = "the users API")
@@ -65,7 +65,7 @@ public interface UsersApi {
         @ApiResponse(code = 401, message = "unauthorized to change password") })
     @RequestMapping(value = "/users/{email}",
         consumes = { "application/json" },
-        method = RequestMethod.PATCH)
+        method = RequestMethod.PUT)
     default ResponseEntity<Void> patchPassword(@ApiParam(value = "",required=true) @PathVariable("email") String email,@ApiParam(value = "header containing a JWT Token" ,required=true) @RequestHeader(value="jwttoken", required=true) String jwttoken,@ApiParam(value = "" ,required=true )  @Valid @RequestBody InlineObject user) {
         return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
 

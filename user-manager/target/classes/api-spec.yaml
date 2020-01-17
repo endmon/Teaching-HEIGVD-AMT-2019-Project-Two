@@ -72,7 +72,7 @@ paths:
             $ref: '#/definitions/User'
         '401':
           description: unauthorized to check user
-    patch:
+    put:
       description: change user password
       operationId: patchPassword
       consumes:
@@ -111,8 +111,3 @@ definitions:
         type: string
       password:
         type: string
-#  JWTToken:
- #   type: object
- #   properties:
-  #    jwttoken:
-   #     type: string

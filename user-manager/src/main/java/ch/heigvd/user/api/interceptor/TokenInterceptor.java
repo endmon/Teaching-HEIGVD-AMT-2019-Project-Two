@@ -20,17 +20,23 @@ public class TokenInterceptor extends HandlerInterceptorAdapter {
 
     @Autowired
     Utils utils;
-
+/*
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
 
-        Claims claims = jwtHelper.decodeJWT(request.getHeader("Authorization"));
+        try {
 
-        if(claims == null) {
+            Claims claims = jwtHelper.decodeJWT(request.getHeader("jwttoken"));
+
+            if (claims == null) {
+                return false;
+            } else {
+                request.setAttribute("claims", claims);
+                return true;
+            }
+
+        }catch (Exception e){
             return false;
-        } else {
-            request.setAttribute("claims", claims);
-            return true;
         }
-    }
+    }*/
 }

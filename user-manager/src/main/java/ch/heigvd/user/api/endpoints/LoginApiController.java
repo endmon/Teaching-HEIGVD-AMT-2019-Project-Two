@@ -38,10 +38,6 @@ public class LoginApiController implements LoginApi {
         if(userEntity != null){
             if(utils.checkPassword(userCredentials.getPassword(), userEntity.getPassword())){
                 String jwtToken = jwtHelper.createJWT(userEntity.getEmail(),  userEntity.isAdmin());
-                System.out.println("email = " + userEntity.getEmail() + " admin = " + userEntity.isAdmin());
-                Claims claims = jwtHelper.decodeJWT(jwtToken);
-                System.out.println("Subject = " + claims.get("email"));
-                System.out.println("Admin = " + claims.get("admin"));
                 System.out.println("token: " + jwtToken);
                 return ResponseEntity.ok(jwtToken);
             }
