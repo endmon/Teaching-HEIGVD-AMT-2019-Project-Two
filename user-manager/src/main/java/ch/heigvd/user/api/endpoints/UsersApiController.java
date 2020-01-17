@@ -30,7 +30,8 @@ public class UsersApiController implements UsersApi {
     @Autowired
     UserRepository userRepository;
 
-    JWTHelper jwtHelper = new JWTHelper();
+    @Autowired
+    JWTHelper jwtHelper;
 
     @Autowired
     HttpServletRequest httpServletRequest;

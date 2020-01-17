@@ -1,13 +1,13 @@
 package ch.heigvd.user.api.endpoints;
 
 import ch.heigvd.user.api.LoginApi;
-import ch.heigvd.user.api.model.JWTToken;
 import ch.heigvd.user.api.model.UserCredentials;
 import ch.heigvd.user.api.util.JWTHelper;
 import ch.heigvd.user.api.util.Utils;
 import ch.heigvd.user.entities.UserEntity;
 import ch.heigvd.user.repositories.UserRepository;
 
+import io.jsonwebtoken.Claims;
 import io.swagger.annotations.*;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,17 +26,23 @@ public class LoginApiController implements LoginApi {
     @Autowired
     UserRepository userRepository;
 
-    JWTHelper jwtHelper = new JWTHelper();
+    @Autowired
+    JWTHelper jwtHelper;
 
     Utils utils = new Utils();
 
-    public ResponseEntity<JWTToken> login(@ApiParam(value = "" ,required=true )  @Valid @RequestBody UserCredentials userCredentials) {
+    public ResponseEntity<String> login(@ApiParam(value = "" ,required=true )  @Valid @RequestBody UserCredentials userCredentials) {
 
         UserEntity userEntity = userRepository.findByEmail(userCredentials.getEmail());
 
         if(userEntity != null){
             if(utils.checkPassword(userCredentials.getPassword(), userEntity.getPassword())){
-                JWTToken jwtToken = jwtHelper.createJWT(userEntity.getEmail(), 10000000, userEntity.isAdmin());
+                String jwtToken = jwtHelper.createJWT(userEntity.getEmail(),  userEntity.isAdmin());
+                System.out.println("email = " + userEntity.getEmail() + " admin = " + userEntity.isAdmin());
+                Claims claims = jwtHelper.decodeJWT(jwtToken);
+                System.out.println("Subject = " + claims.get("email"));
+                System.out.println("Admin = " + claims.get("admin"));
+                System.out.println("token: " + jwtToken);
                 return ResponseEntity.ok(jwtToken);
             }
         }

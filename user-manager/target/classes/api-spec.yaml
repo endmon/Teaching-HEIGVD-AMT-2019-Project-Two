@@ -31,7 +31,7 @@ paths:
         '201':
           description: logged in
           schema:
-            $ref: '#/definitions/JWTToken'
+            type: string
         '401':
           description: Wrong user credentials
   /users:
@@ -111,8 +111,8 @@ definitions:
         type: string
       password:
         type: string
-  JWTToken:
-    type: object
-    properties:
-      jwttoken:
-        type: string
+#  JWTToken:
+ #   type: object
+ #   properties:
+  #    jwttoken:
+   #     type: string
