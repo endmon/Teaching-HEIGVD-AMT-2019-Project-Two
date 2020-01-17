@@ -1,7 +1,7 @@
-package io.swagger.api;
+package ch.heigvd.flight.api.endpoints;
 
-import io.swagger.model.Customer;
-import io.swagger.model.Customers;
+import io.swagger.model.Flight;
+import io.swagger.model.Flights;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.swagger.annotations.*;
 import org.slf4j.Logger;
@@ -24,56 +24,56 @@ import java.util.List;
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-01-16T15:39:21.212Z")
 
 @Controller
-public class CustomersApiController implements CustomersApi {
+public class FlightsApiController implements FlightsApi {
 
-    private static final Logger log = LoggerFactory.getLogger(CustomersApiController.class);
+    private static final Logger log = LoggerFactory.getLogger(FlightsApiController.class);
 
     private final ObjectMapper objectMapper;
 
     private final HttpServletRequest request;
 
     @org.springframework.beans.factory.annotation.Autowired
-    public CustomersApiController(ObjectMapper objectMapper, HttpServletRequest request) {
+    public FlightsApiController(ObjectMapper objectMapper, HttpServletRequest request) {
         this.objectMapper = objectMapper;
         this.request = request;
     }
 
-    public ResponseEntity<Void> addCustomer(@ApiParam(value = "a new customer to the flight manager" ,required=true )  @Valid @RequestBody Customer customer) {
+    public ResponseEntity<Void> addFlight(@ApiParam(value = "a new flight to the flight manager" ,required=true )  @Valid @RequestBody Flight flight) {
         String accept = request.getHeader("Accept");
         return new ResponseEntity<Void>(HttpStatus.NOT_IMPLEMENTED);
     }
 
-    public ResponseEntity<Void> deleteCustomer(@ApiParam(value = "",required=true) @PathVariable("customer_id") Integer customerId) {
+    public ResponseEntity<Void> deleteFlight(@ApiParam(value = "",required=true) @PathVariable("flight_id") Integer flightId) {
         String accept = request.getHeader("Accept");
         return new ResponseEntity<Void>(HttpStatus.NOT_IMPLEMENTED);
     }
 
-    public ResponseEntity<Customer> getCustomer(@ApiParam(value = "",required=true) @PathVariable("customer_id") Integer customerId) {
+    public ResponseEntity<Flight> getFlight(@ApiParam(value = "",required=true) @PathVariable("flight_id") Integer flightId) {
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {
-                return new ResponseEntity<Customer>(objectMapper.readValue("{  \"firstname\" : \"firstname\",  \"customer_pseudo\" : \"customer_pseudo\",  \"customer_pw\" : \"customer_pw\",  \"age\" : 0,  \"lastname\" : \"lastname\"}", Customer.class), HttpStatus.NOT_IMPLEMENTED);
+                return new ResponseEntity<Flight>(objectMapper.readValue("{  \"arrival_time\" : 6,  \"start_point\" : \"start_point\",  \"end_point\" : \"end_point\",  \"price\" : 1,  \"name\" : \"name\",  \"departure_time\" : 0}", Flight.class), HttpStatus.NOT_IMPLEMENTED);
             } catch (IOException e) {
                 log.error("Couldn't serialize response for content type application/json", e);
-                return new ResponseEntity<Customer>(HttpStatus.INTERNAL_SERVER_ERROR);
+                return new ResponseEntity<Flight>(HttpStatus.INTERNAL_SERVER_ERROR);
             }
         }
 
-        return new ResponseEntity<Customer>(HttpStatus.NOT_IMPLEMENTED);
+        return new ResponseEntity<Flight>(HttpStatus.NOT_IMPLEMENTED);
     }
 
-    public ResponseEntity<List<Customers>> getCustomers() {
+    public ResponseEntity<List<Flights>> getFlights() {
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
             try {
-                return new ResponseEntity<List<Customers>>(objectMapper.readValue("[ {  \"firstname\" : \"firstname\",  \"customer_pseudo\" : \"customer_pseudo\",  \"customer_pw\" : \"customer_pw\",  \"customer_id\" : 0,  \"age\" : 6,  \"lastname\" : \"lastname\"}, {  \"firstname\" : \"firstname\",  \"customer_pseudo\" : \"customer_pseudo\",  \"customer_pw\" : \"customer_pw\",  \"customer_id\" : 0,  \"age\" : 6,  \"lastname\" : \"lastname\"} ]", List.class), HttpStatus.NOT_IMPLEMENTED);
+                return new ResponseEntity<List<Flights>>(objectMapper.readValue("[ {  \"arrival_time\" : 1,  \"start_point\" : \"start_point\",  \"end_point\" : \"end_point\",  \"price\" : 5,  \"name\" : \"name\",  \"departure_time\" : 6,  \"flight_id\" : 0}, {  \"arrival_time\" : 1,  \"start_point\" : \"start_point\",  \"end_point\" : \"end_point\",  \"price\" : 5,  \"name\" : \"name\",  \"departure_time\" : 6,  \"flight_id\" : 0} ]", List.class), HttpStatus.NOT_IMPLEMENTED);
             } catch (IOException e) {
                 log.error("Couldn't serialize response for content type application/json", e);
-                return new ResponseEntity<List<Customers>>(HttpStatus.INTERNAL_SERVER_ERROR);
+                return new ResponseEntity<List<Flights>>(HttpStatus.INTERNAL_SERVER_ERROR);
             }
         }
 
-        return new ResponseEntity<List<Customers>>(HttpStatus.NOT_IMPLEMENTED);
+        return new ResponseEntity<List<Flights>>(HttpStatus.NOT_IMPLEMENTED);
     }
 
 }
