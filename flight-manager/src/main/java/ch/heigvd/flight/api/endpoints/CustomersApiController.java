@@ -1,11 +1,15 @@
 package ch.heigvd.flight.api.endpoints;
 
-//import io.swagger.model.Customer;
-//import io.swagger.model.Customers;
+
+import ch.heigvd.flight.api.CustomersApi;
+import ch.heigvd.flight.api.model.Customers;
+import ch.heigvd.flight.api.model.Customer;
+import ch.heigvd.flight.repositories.CustomersRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.swagger.annotations.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -33,39 +37,23 @@ public class CustomersApiController implements CustomersApi {
     HttpServletRequest httpServletRequest;
 
     public ResponseEntity<Void> addCustomer(@ApiParam(value = "a new customer to the flight manager" ,required=true )  @Valid @RequestBody Customer customer) {
-        String accept = request.getHeader("Accept");
+
         return new ResponseEntity<Void>(HttpStatus.NOT_IMPLEMENTED);
     }
 
     public ResponseEntity<Void> deleteCustomer(@ApiParam(value = "",required=true) @PathVariable("customer_id") Integer customerId) {
-        String accept = request.getHeader("Accept");
+
         return new ResponseEntity<Void>(HttpStatus.NOT_IMPLEMENTED);
     }
 
     public ResponseEntity<Customer> getCustomer(@ApiParam(value = "",required=true) @PathVariable("customer_id") Integer customerId) {
-        String accept = request.getHeader("Accept");
-        if (accept != null && accept.contains("application/json")) {
-            try {
-                return new ResponseEntity<Customer>(objectMapper.readValue("{  \"firstname\" : \"firstname\",  \"customer_pseudo\" : \"customer_pseudo\",  \"customer_pw\" : \"customer_pw\",  \"age\" : 0,  \"lastname\" : \"lastname\"}", Customer.class), HttpStatus.NOT_IMPLEMENTED);
-            } catch (IOException e) {
-                log.error("Couldn't serialize response for content type application/json", e);
-                return new ResponseEntity<Customer>(HttpStatus.INTERNAL_SERVER_ERROR);
-            }
-        }
+
 
         return new ResponseEntity<Customer>(HttpStatus.NOT_IMPLEMENTED);
     }
 
     public ResponseEntity<List<Customers>> getCustomers() {
-        String accept = request.getHeader("Accept");
-        if (accept != null && accept.contains("application/json")) {
-            try {
-                return new ResponseEntity<List<Customers>>(objectMapper.readValue("[ {  \"firstname\" : \"firstname\",  \"customer_pseudo\" : \"customer_pseudo\",  \"customer_pw\" : \"customer_pw\",  \"customer_id\" : 0,  \"age\" : 6,  \"lastname\" : \"lastname\"}, {  \"firstname\" : \"firstname\",  \"customer_pseudo\" : \"customer_pseudo\",  \"customer_pw\" : \"customer_pw\",  \"customer_id\" : 0,  \"age\" : 6,  \"lastname\" : \"lastname\"} ]", List.class), HttpStatus.NOT_IMPLEMENTED);
-            } catch (IOException e) {
-                log.error("Couldn't serialize response for content type application/json", e);
-                return new ResponseEntity<List<Customers>>(HttpStatus.INTERNAL_SERVER_ERROR);
-            }
-        }
+
 
         return new ResponseEntity<List<Customers>>(HttpStatus.NOT_IMPLEMENTED);
     }

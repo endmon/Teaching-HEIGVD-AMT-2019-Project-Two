@@ -1,4 +1,4 @@
-package ch.heigvd.user.api.util;
+package ch.heigvd.flight.api.util;
 
 import javax.xml.bind.annotation.XmlTransient;
 

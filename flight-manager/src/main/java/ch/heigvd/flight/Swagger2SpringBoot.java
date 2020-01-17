@@ -1,4 +1,4 @@
-package ch.heigvd.user;
+package ch.heigvd.flight;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.ExitCodeGenerator;
@@ -10,7 +10,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
 @EnableSwagger2
-@ComponentScan(basePackages = { "ch.heigvd.user", "ch.heigvd.user.api" })
+@ComponentScan(basePackages = { "ch.heigvd.flight", "ch.heigvd.flight.api" })
 public class Swagger2SpringBoot implements CommandLineRunner {
 
     @Override

@@ -50,10 +50,10 @@
                                 <useBeanValidation>true</useBeanValidation>
                                 <interfaceOnly>true</interfaceOnly>
                                 <delegatePattern>false</delegatePattern>
-                                <apiPackage>ch.heigvd.user.api</apiPackage>
-                                <configPackage>ch.heigvd.user.config</configPackage>
-                                <basePackage>ch.heigvd.user</basePackage>
-                                <modelPackage>ch.heigvd.user.api.model</modelPackage>
+                                <apiPackage>ch.heigvd.flight.api</apiPackage>
+                                <configPackage>ch.heigvd.flight.config</configPackage>
+                                <basePackage>ch.heigvd.flight</basePackage>
+                                <modelPackage>ch.heigvd.flight.api.model</modelPackage>
                             </configOptions>
                         </configuration>
                     </execution>

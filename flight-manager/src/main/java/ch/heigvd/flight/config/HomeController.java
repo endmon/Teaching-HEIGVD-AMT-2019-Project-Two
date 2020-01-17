@@ -1,4 +1,4 @@
-package ch.heigvd.user.config;
+package ch.heigvd.flight.config;
 
 
 import org.springframework.stereotype.Controller;

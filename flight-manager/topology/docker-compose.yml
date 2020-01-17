@@ -4,7 +4,7 @@ services:
     build: ../images/mysql
     environment:
       - MYSQL_ROOT_PASSWORD=root
-      - MYSQL_DATABASE=user_auth
+      - MYSQL_DATABASE=FlightCompany
     ports:
       - "3307:3306"
     volumes:

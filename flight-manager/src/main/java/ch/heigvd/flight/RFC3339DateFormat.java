@@ -1,4 +1,4 @@
-package ch.heigvd.user;
+package ch.heigvd.flight;
 
 import com.fasterxml.jackson.databind.util.ISO8601DateFormat;
 import com.fasterxml.jackson.databind.util.ISO8601Utils;

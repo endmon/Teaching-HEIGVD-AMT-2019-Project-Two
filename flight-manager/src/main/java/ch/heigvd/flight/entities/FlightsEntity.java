@@ -1,24 +1,34 @@
 package ch.heigvd.flight.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
 
 
 @Entity
+@Table(name="flight")
 public class FlightsEntity implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="flight_id")
     private long flight_id;
 
+    @Column(name="name")
     private String name;
+
+    @Column(name="departure_time")
     private long departure_time;
+
+    @Column(name="arrival_time")
     private long arrival_time;
+
+    @Column(name="start_point")
     private String start_point;
+
+    @Column(name="end_point")
     private String end_point;
+
+    @Column(name="price")
     private int price;
 
 

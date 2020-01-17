@@ -18,7 +18,7 @@ public class CustomersEntity implements Serializable {
     private String firstname;
     private String lastname;
     private int age;
-    private Strinf customer_pw;
+    private String customer_pw;
 
 
     public long getCustomer_id() {
@@ -57,11 +57,11 @@ public class CustomersEntity implements Serializable {
         this.age = age;
     }
 
-    public Strinf getCustomer_pw() {
+    public String getCustomer_pw() {
         return customer_pw;
     }
 
-    public void setCustomer_pw(Strinf customer_pw) {
+    public void setCustomer_pw(String customer_pw) {
         this.customer_pw = customer_pw;
     }
 }
