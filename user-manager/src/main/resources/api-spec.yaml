@@ -31,7 +31,7 @@ paths:
         '201':
           description: logged in
           schema:
-            $ref: '#/definitions/JWTToken'
+            type: string
         '401':
           description: Wrong user credentials
   /users:
@@ -72,7 +72,7 @@ paths:
             $ref: '#/definitions/User'
         '401':
           description: unauthorized to check user
-    patch:
+    put:
       description: change user password
       operationId: patchPassword
       consumes:
@@ -110,9 +110,4 @@ definitions:
       email:
         type: string
       password:
-        type: string
-  JWTToken:
-    type: object
-    properties:
-      jwttoken:
         type: string

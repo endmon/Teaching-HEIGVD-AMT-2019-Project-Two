@@ -5,7 +5,6 @@
  */
 package ch.heigvd.user.api;
 
-import ch.heigvd.user.api.model.JWTToken;
 import ch.heigvd.user.api.model.UserCredentials;
 import io.swagger.annotations.*;
 import org.springframework.http.HttpStatus;
@@ -27,7 +26,7 @@ import javax.validation.constraints.*;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2020-01-15T09:42:18.632+01:00[Europe/Berlin]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2020-01-17T14:26:49.293+01:00[Europe/Berlin]")
 
 @Validated
 @Api(value = "login", description = "the login API")
@@ -37,24 +36,15 @@ public interface LoginApi {
         return Optional.empty();
     }
 
-    @ApiOperation(value = "", nickname = "login", notes = "log with JWT token", response = JWTToken.class, tags={  })
+    @ApiOperation(value = "", nickname = "login", notes = "log with JWT token", response = String.class, tags={  })
     @ApiResponses(value = { 
-        @ApiResponse(code = 201, message = "logged in", response = JWTToken.class),
+        @ApiResponse(code = 201, message = "logged in", response = String.class),
         @ApiResponse(code = 401, message = "Wrong user credentials") })
     @RequestMapping(value = "/login",
         produces = { "*/*" }, 
         consumes = { "application/json" },
         method = RequestMethod.POST)
-    default ResponseEntity<JWTToken> login(@ApiParam(value = "" ,required=true )  @Valid @RequestBody UserCredentials userCredentials) {
-        getRequest().ifPresent(request -> {
-            for (MediaType mediaType: MediaType.parseMediaTypes(request.getHeader("Accept"))) {
-                if (mediaType.isCompatibleWith(MediaType.valueOf("*/*"))) {
-                    String exampleString = "{ \"jwttoken\" : \"jwttoken\" }";
-                    ApiUtil.setExampleResponse(request, "*/*", exampleString);
-                    break;
-                }
-            }
-        });
+    default ResponseEntity<String> login(@ApiParam(value = "" ,required=true )  @Valid @RequestBody UserCredentials userCredentials) {
         return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
 
     }
