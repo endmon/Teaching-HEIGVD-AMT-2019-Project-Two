@@ -1,0 +1,53 @@
+swagger: '2.0'
+info:
+  version: '0.1.0'
+  title: User Api
+  description: An API to manage users
+host: localhost:8080
+basePath: /api
+schemes:
+  - http
+paths:
+  /login:
+    post:
+      description: log with JWT token
+      operationId: login
+      consumes:
+        - application/json
+      parameters:
+        - name: userCredentials
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/UserCredentials'
+      responses:
+        '201':
+          description: logged in
+          schema:
+            $ref: '#/definitions/SuccessfulLogin'
+definitions:
+  User:
+    type: object
+    properties:
+      username:
+        type: string
+      first_name:
+        type: string
+      last_name:
+        type: string
+      email:
+        type: string
+  UserCredentials:
+    type: object
+    properties:
+      username:
+        type: string
+      password:
+        type: string
+  SuccessfulLogin:
+    type: object
+    properties:
+      userID:
+        type: integer
+      JWTToken:
+        type: string

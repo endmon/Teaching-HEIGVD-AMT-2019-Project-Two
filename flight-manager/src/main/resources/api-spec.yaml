@@ -1,0 +1,197 @@
+swagger: '2.0'
+info:
+  version: '0.1.0'
+  title: Flight Api
+  description: An API to manage flight
+host: localhost:8081
+basePath: /api
+schemes:
+  - http
+paths:
+  /flights:
+    get:
+      description: get the list of flightd
+      operationId: getFlights
+      produces:
+        - application/json
+      responses:
+        '201':
+            description: list of flights sent
+            schema:
+              type: array
+              items:
+                $ref: '#/definitions/Flights'
+        '400':
+            description: error in retrieve list of flights
+    post:
+      description: add a new flight
+      operationId: addFlight
+      consumes:
+        - application/json
+      parameters:
+        - name: flight
+          in: body
+          description: a new flight to the flight manager
+          required: true
+          schema:
+            $ref: '#/definitions/Flight'
+      responses:
+        '201':
+          description: flight added
+        '400':
+          description: error in adding flight
+  /flights/{flight_id}:
+    parameters:
+      - in: path
+        name: flight_id
+        required: true
+        type: integer
+    get:
+      description: get flight by id
+      operationId: getFlight
+      produces:
+        - application/json
+      responses:
+        '201':
+          description: flight sent
+          schema:
+            $ref: '#/definitions/Flight'
+        '400':
+          description: bad request
+        '404':
+          description: not found
+    delete:
+      description: delete a flight by id
+      operationId: deleteFlight
+      responses:
+        '201':
+          description: flight deleted
+        '400':
+          description: bad request
+        '404':
+          description: not found
+
+  /customers:
+    get:
+      description: get the list of customers
+      operationId: getCustomers
+      produces:
+        - application/json
+      responses:
+        '201':
+          description: list of customers sent
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Customers'
+        '400':
+          description: error in retrieve list of customers
+    post:
+      description: add a new customer
+      operationId: addCustomer
+      consumes:
+        - application/json
+      parameters:
+        - name: customer
+          in: body
+          description: a new customer to the flight manager
+          required: true
+          schema:
+            $ref: '#/definitions/Customer'
+      responses:
+        '201':
+          description: customer added
+        '400':
+          description: error in adding customer
+  /customers/{customer_id}:
+    parameters:
+    - in: path
+      name: customer_id
+      required: true
+      type: integer
+    get:
+      description: get customer by id
+      operationId: getCustomer
+      produces:
+        - application/json
+      responses:
+        '201':
+          description: customer sent
+          schema:
+            $ref: '#/definitions/Customer'
+        '400':
+          description: bad request
+        '404':
+          description: not found
+    delete:
+      description: delete a customer by id
+      operationId: deleteCustomer
+      responses:
+        '201':
+          description: customer deleted
+        '400':
+          description: bad request
+        '404':
+          description: not found
+
+definitions:
+  Flight:
+    type: object
+    properties:
+      name:
+        type: string
+      departure_time:
+        type: integer
+      arrival_time:
+        type: integer
+      start_point:
+        type: string
+      end_point:
+        type: string
+      price:
+        type: integer
+  Flights:
+    type: object
+    properties:
+      flight_id:
+        type: integer
+      name:
+        type: string
+      departure_time:
+        type: integer
+      arrival_time:
+        type: integer
+      start_point:
+        type: string
+      end_point:
+        type: string
+      price:
+        type: integer
+  Customer:
+    type: object
+    properties:
+      customer_pseudo:
+        type: string
+      firstname:
+        type: string
+      lastname:
+        type: string
+      age:
+        type: integer
+      customer_pw:
+        type: string
+  Customers:
+    type: object
+    properties:
+      customer_id:
+        type: integer
+      customer_pseudo:
+        type: string
+      firstname:
+        type: string
+      lastname:
+        type: string
+      age:
+        type: integer
+      customer_pw:
+        type: string

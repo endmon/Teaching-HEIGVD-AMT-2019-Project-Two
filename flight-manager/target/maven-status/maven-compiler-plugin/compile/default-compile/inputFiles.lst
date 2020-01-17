@@ -1,0 +1,17 @@
+C:\Users\Baptiste\Documents\heig\semestre_5\amt\Teaching-HEIGVD-AMT-2019-Project-Two\user-manager\src\main\java\ch\heigvd\user\api\util\JWTHelper.java
+C:\Users\Baptiste\Documents\heig\semestre_5\amt\Teaching-HEIGVD-AMT-2019-Project-Two\user-manager\src\main\java\ch\heigvd\user\api\exceptions\NotFoundException.java
+C:\Users\Baptiste\Documents\heig\semestre_5\amt\Teaching-HEIGVD-AMT-2019-Project-Two\user-manager\src\main\java\ch\heigvd\user\api\util\ApiResponseMessage.java
+C:\Users\Baptiste\Documents\heig\semestre_5\amt\Teaching-HEIGVD-AMT-2019-Project-Two\user-manager\target\generated-sources\openapi\src\main\java\main\java\ch\heigvd\user\api\model\SuccessfulLogin.java
+C:\Users\Baptiste\Documents\heig\semestre_5\amt\Teaching-HEIGVD-AMT-2019-Project-Two\user-manager\src\main\java\ch\heigvd\user\config\SwaggerDocumentationConfig.java
+C:\Users\Baptiste\Documents\heig\semestre_5\amt\Teaching-HEIGVD-AMT-2019-Project-Two\user-manager\target\generated-sources\openapi\src\main\java\main\java\ch\heigvd\user\api\ApiUtil.java
+C:\Users\Baptiste\Documents\heig\semestre_5\amt\Teaching-HEIGVD-AMT-2019-Project-Two\user-manager\src\main\java\ch\heigvd\user\RFC3339DateFormat.java
+C:\Users\Baptiste\Documents\heig\semestre_5\amt\Teaching-HEIGVD-AMT-2019-Project-Two\user-manager\target\generated-sources\openapi\src\main\java\main\java\ch\heigvd\user\api\model\UserCredentials.java
+C:\Users\Baptiste\Documents\heig\semestre_5\amt\Teaching-HEIGVD-AMT-2019-Project-Two\user-manager\src\main\java\ch\heigvd\user\api\endpoints\UserApiController.java
+C:\Users\Baptiste\Documents\heig\semestre_5\amt\Teaching-HEIGVD-AMT-2019-Project-Two\user-manager\src\main\java\ch\heigvd\user\entities\UserEntity.java
+C:\Users\Baptiste\Documents\heig\semestre_5\amt\Teaching-HEIGVD-AMT-2019-Project-Two\user-manager\src\main\java\ch\heigvd\user\Swagger2SpringBoot.java
+C:\Users\Baptiste\Documents\heig\semestre_5\amt\Teaching-HEIGVD-AMT-2019-Project-Two\user-manager\src\main\java\ch\heigvd\user\api\exceptions\ApiException.java
+C:\Users\Baptiste\Documents\heig\semestre_5\amt\Teaching-HEIGVD-AMT-2019-Project-Two\user-manager\target\generated-sources\openapi\src\main\java\main\java\ch\heigvd\user\api\model\User.java
+C:\Users\Baptiste\Documents\heig\semestre_5\amt\Teaching-HEIGVD-AMT-2019-Project-Two\user-manager\src\main\java\ch\heigvd\user\api\util\ApiOriginFilter.java
+C:\Users\Baptiste\Documents\heig\semestre_5\amt\Teaching-HEIGVD-AMT-2019-Project-Two\user-manager\src\main\java\ch\heigvd\user\repositories\UserRepository.java
+C:\Users\Baptiste\Documents\heig\semestre_5\amt\Teaching-HEIGVD-AMT-2019-Project-Two\user-manager\src\main\java\ch\heigvd\user\config\HomeController.java
+C:\Users\Baptiste\Documents\heig\semestre_5\amt\Teaching-HEIGVD-AMT-2019-Project-Two\user-manager\target\generated-sources\openapi\src\main\java\main\java\ch\heigvd\user\api\LoginApi.java
