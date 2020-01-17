@@ -26,17 +26,11 @@ import java.util.List;
 @Controller
 public class CustomersApiController implements CustomersApi {
 
-    private static final Logger log = LoggerFactory.getLogger(CustomersApiController.class);
+    @Autowired
+    CustomersRepository customersRepository;
 
-    private final ObjectMapper objectMapper;
-
-    private final HttpServletRequest request;
-
-    @org.springframework.beans.factory.annotation.Autowired
-    public CustomersApiController(ObjectMapper objectMapper, HttpServletRequest request) {
-        this.objectMapper = objectMapper;
-        this.request = request;
-    }
+    @Autowired
+    HttpServletRequest httpServletRequest;
 
     public ResponseEntity<Void> addCustomer(@ApiParam(value = "a new customer to the flight manager" ,required=true )  @Valid @RequestBody Customer customer) {
         String accept = request.getHeader("Accept");

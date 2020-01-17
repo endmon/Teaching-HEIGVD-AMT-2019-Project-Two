@@ -1,7 +1,7 @@
 package ch.heigvd.flight.api.endpoints;
 
-import io.swagger.model.Flight;
-import io.swagger.model.Flights;
+//import io.swagger.model.Flight;
+//import io.swagger.model.Flights;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.swagger.annotations.*;
 import org.slf4j.Logger;
@@ -26,17 +26,11 @@ import java.util.List;
 @Controller
 public class FlightsApiController implements FlightsApi {
 
-    private static final Logger log = LoggerFactory.getLogger(FlightsApiController.class);
+    @Autowired
+    FlightsRepository flightsRepository;
 
-    private final ObjectMapper objectMapper;
-
-    private final HttpServletRequest request;
-
-    @org.springframework.beans.factory.annotation.Autowired
-    public FlightsApiController(ObjectMapper objectMapper, HttpServletRequest request) {
-        this.objectMapper = objectMapper;
-        this.request = request;
-    }
+    @Autowired
+    HttpServletRequest httpServletRequest;
 
     public ResponseEntity<Void> addFlight(@ApiParam(value = "a new flight to the flight manager" ,required=true )  @Valid @RequestBody Flight flight) {
         String accept = request.getHeader("Accept");
