@@ -37,43 +37,58 @@ public class UsersApiController implements UsersApi {
     HttpServletRequest httpServletRequest;
 
     public ResponseEntity<User> getUserByEmail(@ApiParam(value = "",required=true) @PathVariable("email") String email,@ApiParam(value = "header containing a JWT Token" ,required=true) @RequestHeader(value="jwttoken", required=true) String jwttoken) {
-        Claims claims = (Claims) httpServletRequest.getAttribute("claims");
-        if (((Boolean) claims.get("admin") == true) || email.equals(claims.getSubject())) {
-            User user = new User();
-            UserEntity userEntity = userRepository.findByEmail(email);
-            user.setEmail(userEntity.getEmail());
-            user.setPassword(userEntity.getPassword());
-            user.setLastName(userEntity.getLast_name());
-            user.setFirstName(userEntity.getFirst_name());
-            user.setAdmin(userEntity.isAdmin());
-            return ResponseEntity.ok(user);
+        Claims claims = jwtHelper.decodeJWT(jwttoken);
+        if(claims != null) {
+            if (((Boolean) claims.get("admin") == true) || email.equals(claims.getSubject())) {
+                User user = new User();
+                UserEntity userEntity = userRepository.findByEmail(email);
+                user.setEmail(userEntity.getEmail());
+                user.setPassword(userEntity.getPassword());
+                user.setLastName(userEntity.getLast_name());
+                user.setFirstName(userEntity.getFirst_name());
+                user.setAdmin(userEntity.isAdmin());
+                return ResponseEntity.ok(user);
+            }
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
         }
-        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+        return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).build();
     }
 
-    public ResponseEntity<Void> patchPassword(@ApiParam(value = "",required=true) @PathVariable("email") String email,@ApiParam(value = "header containing a JWT Token" ,required=true) @RequestHeader(value="jwttoken", required=true) String jwttoken,@ApiParam(value = "" ,required=true )  @Valid @RequestBody User user) {
-        Claims claims = (Claims) httpServletRequest.getAttribute("claims");
 
-        if(((Boolean) claims.get("admin") == true) || email.equals(claims.getSubject())){
+    public ResponseEntity<Void> changePassword(@ApiParam(value = "",required=true) @PathVariable("email") String email,@ApiParam(value = "header containing a JWT Token" ,required=true) @RequestHeader(value="jwttoken", required=true) String jwttoken,@ApiParam(value = "" ,required=true )  @Valid @RequestBody String newPassword) {
+        Claims claims = jwtHelper.decodeJWT(jwttoken);
 
-            UserEntity usr = userRepository.findByEmail(email);
+        if(claims != null) {
+            if (((Boolean) claims.get("admin") == true) || email.equals(claims.getSubject())) {
 
-            if(usr != null){
-                usr.setPassword(utils.hashPassword(user.getPassword()));
-                userRepository.save(usr);
-                return ResponseEntity.status(HttpStatus.CREATED).build();
+                UserEntity usr = userRepository.findByEmail(email);
+
+                if (usr != null) {
+                    usr.setPassword(utils.hashPassword(newPassword));
+                    userRepository.save(usr);
+                    return ResponseEntity.status(HttpStatus.CREATED).build();
+                }
             }
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
         }
-        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+        return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).build();
     }
 
     public ResponseEntity<Void> register(@ApiParam(value = "header containing a JWT Token" ,required=true) @RequestHeader(value="jwttoken", required=true) String jwttoken,@ApiParam(value = "" ,required=true )  @Valid @RequestBody User user) {
 
-        Claims claims = jwtHelper.decodeJWT(jwttoken);
+        Claims claims;
+        try {
+            claims = jwtHelper.decodeJWT(jwttoken);
+        }catch (Exception e){
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
 
         if(claims != null) {
-            System.out.println("claims are not nul");
             if ((Boolean) claims.get("admin") == true) {
+                //on vérifie que le user email n'est pas déjà utilisé
+                if(userRepository.findByEmail(user.getEmail()) != null){
+                    return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
+                }
                 UserEntity usr = new UserEntity();
                 usr.setAdmin(user.getAdmin());
                 usr.setEmail(user.getEmail());
@@ -83,11 +98,10 @@ public class UsersApiController implements UsersApi {
                 userRepository.save(usr);
                 return ResponseEntity.status(HttpStatus.CREATED).build();
             }
-        }else {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
         }
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
 
-        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
     }
 
 

@@ -4,7 +4,7 @@ info:
   title: User Api
   description: An API to manage users
 host: localhost:8080
-basePath: /api
+basePath: /api-user-manager
 schemes:
   - http
 parameters:
@@ -53,6 +53,10 @@ paths:
           description: user created
         '401':
           description: request not permitted
+        '403':
+          description: user mail already registered
+        '406':
+          description: token error
   /users/{email}:
     parameters:
       - in: path
@@ -74,22 +78,22 @@ paths:
           description: unauthorized to check user
     put:
       description: change user password
-      operationId: patchPassword
+      operationId: changePassword
       consumes:
         - application/json
       parameters:
-        - name: user
+        - name: newPassword
           in: body
           required: true
           schema:
-            properties:
-              password:
-                type: string
+            type: string
       responses:
         '201':
-          description: updated password correctly
+          description: changed password successfully
         '401':
           description: unauthorized to change password
+        '406':
+          description: token error
 definitions:
   User:
     type: object

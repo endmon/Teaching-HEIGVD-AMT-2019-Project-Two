@@ -5,7 +5,6 @@
  */
 package ch.heigvd.user.api;
 
-import ch.heigvd.user.api.model.InlineObject;
 import ch.heigvd.user.api.model.User;
 import io.swagger.annotations.*;
 import org.springframework.http.HttpStatus;
@@ -27,7 +26,7 @@ import javax.validation.constraints.*;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2020-01-17T14:26:49.293+01:00[Europe/Berlin]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2020-01-18T12:40:41.030+01:00[Europe/Berlin]")
 
 @Validated
 @Api(value = "users", description = "the users API")
@@ -36,6 +35,20 @@ public interface UsersApi {
     default Optional<NativeWebRequest> getRequest() {
         return Optional.empty();
     }
+
+    @ApiOperation(value = "", nickname = "changePassword", notes = "change user password", tags={  })
+    @ApiResponses(value = { 
+        @ApiResponse(code = 201, message = "changed password successfully"),
+        @ApiResponse(code = 401, message = "unauthorized to change password"),
+        @ApiResponse(code = 406, message = "token error") })
+    @RequestMapping(value = "/users/{email}",
+        consumes = { "application/json" },
+        method = RequestMethod.PUT)
+    default ResponseEntity<Void> changePassword(@ApiParam(value = "",required=true) @PathVariable("email") String email,@ApiParam(value = "header containing a JWT Token" ,required=true) @RequestHeader(value="jwttoken", required=true) String jwttoken,@ApiParam(value = "" ,required=true )  @Valid @RequestBody String newPassword) {
+        return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
+
+    }
+
 
     @ApiOperation(value = "", nickname = "getUserByEmail", notes = "get user informations", response = User.class, tags={  })
     @ApiResponses(value = { 
@@ -59,23 +72,12 @@ public interface UsersApi {
     }
 
 
-    @ApiOperation(value = "", nickname = "patchPassword", notes = "change user password", tags={  })
-    @ApiResponses(value = { 
-        @ApiResponse(code = 201, message = "updated password correctly"),
-        @ApiResponse(code = 401, message = "unauthorized to change password") })
-    @RequestMapping(value = "/users/{email}",
-        consumes = { "application/json" },
-        method = RequestMethod.PUT)
-    default ResponseEntity<Void> patchPassword(@ApiParam(value = "",required=true) @PathVariable("email") String email,@ApiParam(value = "header containing a JWT Token" ,required=true) @RequestHeader(value="jwttoken", required=true) String jwttoken,@ApiParam(value = "" ,required=true )  @Valid @RequestBody InlineObject user) {
-        return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
-
-    }
-
-
     @ApiOperation(value = "", nickname = "register", notes = "create a user", tags={  })
     @ApiResponses(value = { 
         @ApiResponse(code = 201, message = "user created"),
-        @ApiResponse(code = 401, message = "request not permitted") })
+        @ApiResponse(code = 401, message = "request not permitted"),
+        @ApiResponse(code = 403, message = "user mail already registered"),
+        @ApiResponse(code = 406, message = "token error") })
     @RequestMapping(value = "/users",
         consumes = { "application/json" },
         method = RequestMethod.POST)

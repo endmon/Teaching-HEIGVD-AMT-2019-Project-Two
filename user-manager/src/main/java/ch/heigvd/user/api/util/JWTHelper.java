@@ -33,7 +33,8 @@ public class JWTHelper {
 
         //Let's set the JWT Claims
         JwtBuilder builder = Jwts.builder()
-                .claim("email", email)
+                .setIssuer("api-user")
+                .setSubject(email)
                 .claim("admin", admin)
                 .signWith(signatureAlgorithm, signingKey);
 
