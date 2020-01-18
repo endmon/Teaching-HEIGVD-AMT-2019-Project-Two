@@ -1,13 +1,10 @@
 package ch.heigvd.flight.api.endpoints;
 
-//import io.swagger.model.Flight;
-//import io.swagger.model.Flights;
 import ch.heigvd.flight.api.FlightsApi;
 import ch.heigvd.flight.api.model.Flight;
 import ch.heigvd.flight.api.model.Flights;
 import ch.heigvd.flight.repositories.FlightsRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
-//import com.sun.xml.internal.ws.resources.ModelerMessages;
 import io.swagger.annotations.*;
 import org.hibernate.annotations.common.util.impl.LoggerFactory;
 import org.slf4j.*;

@@ -1,23 +1,31 @@
 package ch.heigvd.flight.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
 
 
 @Entity
+@Table(name="customer")
 public class CustomersEntity implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="customer_id")
     private long customer_id;
 
-    private String customer_pseudo;
+    @Column(name="customer_pseudo")
+    private String pseudo;
+
+    @Column(name="firstname")
     private String firstname;
+
+    @Column(name="lastname")
     private String lastname;
-    private int age;
+
+    @Column(name="age")
+    private short age;
+
+    @Column(name="customer_pw")
     private String customer_pw;
 
 
@@ -26,11 +34,11 @@ public class CustomersEntity implements Serializable {
     }
 
     public String getCustomer_pseudo() {
-        return customer_pseudo;
+        return pseudo;
     }
 
     public void setCustomer_pseudo(String customer_pseudo) {
-        this.customer_pseudo = customer_pseudo;
+        this.pseudo = customer_pseudo;
     }
 
     public String getFirstname() {
@@ -49,11 +57,11 @@ public class CustomersEntity implements Serializable {
         this.lastname = lastname;
     }
 
-    public int getAge() {
+    public short getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(short age) {
         this.age = age;
     }
 

@@ -17,8 +17,8 @@ public class SwaggerDocumentationConfig {
 
     ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("User Login API")
-                .description("An API to manage users for API User")
+                .title("Flight Manager API")
+                .description("An API to manage flight for API Flight")
                 .license("")
                 .licenseUrl("http://unlicense.org")
                 .termsOfServiceUrl("")

@@ -1,6 +1,5 @@
 package ch.heigvd.flight.api.endpoints;
 
-
 import ch.heigvd.flight.api.CustomersApi;
 import ch.heigvd.flight.api.model.Customers;
 import ch.heigvd.flight.api.model.Customer;

@@ -11,7 +11,7 @@ public class FlightsEntity implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="flight_id")
-    private long flight_id;
+    private long Id;
 
     @Column(name="name")
     private String name;
@@ -33,7 +33,7 @@ public class FlightsEntity implements Serializable {
 
 
     public long getFlight_id() {
-        return flight_id;
+        return Id;
     }
 
     public String getName() {
