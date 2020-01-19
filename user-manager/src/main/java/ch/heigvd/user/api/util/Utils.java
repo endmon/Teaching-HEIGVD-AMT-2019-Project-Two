@@ -17,4 +17,9 @@ public class Utils {
         }
     }
 
+    public static void main(String[] args){
+        JWTHelper jwtHelper = new JWTHelper();
+        System.out.println(jwtHelper.createJWT("test@test.com",false));
+    }
+
 }

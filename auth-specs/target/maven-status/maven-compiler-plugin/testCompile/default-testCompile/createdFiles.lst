@@ -1,3 +1,5 @@
+ch\heigvd\users\api\spec\steps\LoginSteps.class
+ch\heigvd\users\api\spec\steps\PasswordSteps.class
 ch\heigvd\users\api\spec\steps\CreationSteps.class
 ch\heigvd\users\api\spec\SpecificationTest.class
 ch\heigvd\users\api\spec\helpers\Environment.class

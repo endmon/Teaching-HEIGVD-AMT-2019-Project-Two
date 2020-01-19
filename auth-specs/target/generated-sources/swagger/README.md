@@ -2,7 +2,7 @@
 
 User Api
 - API version: 0.1.0
-  - Build date: 2020-01-19T11:55:53.669+01:00[Europe/Berlin]
+  - Build date: 2020-01-19T20:28:05.850+01:00[Europe/Berlin]
 
 An API to manage users
 
