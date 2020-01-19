@@ -1,0 +1,117 @@
+swagger: '2.0'
+info:
+  version: '0.1.0'
+  title: User Api
+  description: An API to manage users
+host: localhost:8080
+basePath: /api-user-manager
+schemes:
+  - http
+parameters:
+  JWTToken:
+    in: header
+    name: jwttoken
+    description: header containing a JWT Token
+    type: string
+    required: true
+paths:
+  /login:
+    post:
+      description: log with JWT token
+      operationId: login
+      consumes:
+        - application/json
+      parameters:
+        - name: userCredentials
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/UserCredentials'
+      responses:
+        '201':
+          description: logged in
+          schema:
+            type: string
+        '401':
+          description: Wrong user credentials
+  /users:
+    parameters:
+      - $ref: '#/parameters/JWTToken'
+    post:
+      description: create a user
+      operationId: register
+      consumes:
+        - application/json
+      parameters:
+        - name: user
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/User'
+      responses:
+        '201':
+          description: user created
+        '401':
+          description: request not permitted
+        '403':
+          description: user mail already registered
+        '406':
+          description: token error
+  /users/{email}:
+    parameters:
+      - in: path
+        name: email
+        required: true
+        type: string
+      - $ref: '#/parameters/JWTToken'
+    get:
+      description: get user informations
+      operationId: getUserByEmail
+      produces:
+        - application/json
+      responses:
+        '201':
+          description: user informations
+          schema:
+            $ref: '#/definitions/User'
+        '401':
+          description: unauthorized to check user
+    put:
+      description: change user password
+      operationId: changePassword
+      consumes:
+        - application/json
+      parameters:
+        - name: newPassword
+          in: body
+          required: true
+          schema:
+            type: string
+      responses:
+        '201':
+          description: changed password successfully
+        '401':
+          description: unauthorized to change password
+        '406':
+          description: token error
+definitions:
+  User:
+    type: object
+    properties:
+      first_name:
+        type: string
+      last_name:
+        type: string
+      email:
+        type: string
+      password:
+        type: string
+      admin:
+        type: boolean
+  UserCredentials:
+    type: object
+    properties:
+      email:
+        type: string
+      password:
+        type: string
