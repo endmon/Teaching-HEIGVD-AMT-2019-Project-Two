@@ -16,9 +16,6 @@ Un administrateur peut voir tous les comptes, un utilisateur ne peut voir que le
 Nous avons aussi fait en sorte que seul un compte administrateur peut créer un compte.\
 Pour vérifier si un utilisateur est identifié en tant qu'administrateur ou non, il doit soumettre un token JWT reçu lorsqu'il se connecte.
 
-### Respect des contraintes
-Les contraintes ont été respectées en général, cependant nous n'avons pas implementé le container Traefik ainsi que le fait d'avoir nos back-end qui tournent sur un container.
-
 ### Lancer l'application
 Commencer par lancer le script run-docker.sh\
 Une fois ce dernier lancé, démarrer le script run-user-manager.sh\
@@ -50,31 +47,48 @@ Aucun bug n'a été observé pour cette API.\
 Il y a une limitation au niveau des tests; quand on lance la première fois, tous les tests passent, mais la seconde fios, un test ne passe pas.
 Cela est du au fait que dans un des tests, on ajoute un utilisateur dans la base de donnée. Si on réessaie de l'ajouter une seconde fois, l'opération est refusée car il n'y a qu'un compte par adresse mail.
 
-## Non-functional requirements
+## Flight API
 
-* **Automation**
-  * It MUST be possible to build, run and test your project with minimal effort (you know how to use Docker Compose and how to write scripts)
-* **Testing**
-  * **BDD**. Implement comprehensive testing with CucumberJVM.
-  * **Performance and load testing**. Implement JMeter tests for several use cases.
-* **Documentation**
-  * Document the decisions you made during the design of the API.
-  * Document your implementation of the back-end APIs (how did you use the framework capabilities, what did you have to do to fix issues or implement special features).
-  * Document what you have one to test and validate your project.
-  * Document and comment your performance results (we want numbers, screenshots and an interpretation).
+Nous avons repris notre flight-manager du premier labo comme seconde API. Nous avons une table Customer. Un customer est composé d'un pseudo, un prénom, un nom, un age et un mot de passe.
 
-## Organization
+Nous avons une deuxième table flight. Un flight est composé d'un nom, d'un point de départ, d'un point d'arrivé, d'une date de départ, d'une date d'arrivé et d'un prix.
+
+L'entité flight et customer se comporte de la même façont. On peut ajouter un élément, le récupérer avec son Id, le supprimer avec son Id et récupérer tous les éléments avec une pagination. Page et size en paramètre dans l'url pour choisir quels le nombre d'éléments qu'on veut récupérer.
+
+### Lancer l'application
+
+Commencer par lancer le script run-docker.sh\
+Une fois ce dernier lancé, démarrer le script run-flight-manager.sh\
+Pour tester l'api, aller sur [localhost:8081/api-flight-manager](http://localhost:8081/api-flight-manager/swagger-ui.html) </br>
+
+### Ce qui a été implémenté
+
+Les features de l'API ont été décrit précédemment.\
+Pour cette API, nous avons eu besoin d'implémenter CustomerEntity et FlightEntity.
+
+### Tests JMeter
+
+Notre base de donnée a 10'000 éléments.
+
+Nous faisons 1000 requêtes avec la taille(pramètre size) par défault (10).
+
+![](./doc/Jmeter1000Request.PNG)
+
+Nous faisons une requête avec 10'000 comme taille pour tout récupérer d'un coup.
+
+![JmeterAllInONe](./doc/JmeterAllInONe.PNG)
+
+Nous remarquons que c'est rapide avec 1 seule requête.
+
+## Bugs et limitations
+
+Aucun bug n'a été observé pour ces API.\
+Il y a une limitation au niveau des tests; quand on lance la première fois, tous les tests passent, mais la seconde fios, un test ne passe pas.
+Cela est du au fait que dans un des tests, on ajoute un utilisateur dans la base de donnée. Si on réessaie de l'ajouter une seconde fois, l'opération est refusée car il n'y a qu'un compte par adresse mail.
 
 
-**Deliverables:**
 
-* Clean git repo, with clear instructions on the main README.md for how to build, run and test your application.
-* Report as a set of markdown files in a doc folder.
-* Links to the various markdown files from the main README.md files.
-* What do we want to read in your report?
-  * **What** you have implemented (functional aspects). Tell us briefly about the business domain you have selected and describe your business model. A diagram showing the entities and their relationships will help. A couple of screenshots too.
-  * **How** you have implemented it. Tell us briefly about the components you had to use across the tiers and if you encountered issues or made choices that you find interesting.
-  * You **testing strategy**: we want to see that you understand the role and value of the different types of automated tests. We want to see that you can explain what tools can be used t implement these types of tests. We want to have your opinion on the effectiveness of your test strategy (what do you like and what do you not like about your test suite?)
-  * In particular a detailed report about your **experiment** to answer the performance tests. We want a clear description of the experiment. We want numbers, graphs and explanations of what they mean.
-  * A list of **known bugs and limitations**.
+## Respect des contraintes
+
+Les contraintes ont été respectées en général, cependant nous n'avons pas implementé le container Traefik ainsi que le fait d'avoir nos back-end qui tournent sur un container.
 
