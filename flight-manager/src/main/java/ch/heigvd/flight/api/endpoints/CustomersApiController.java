@@ -11,6 +11,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -64,14 +65,14 @@ public class CustomersApiController implements CustomersApi {
         return ResponseEntity.ok(customer);
     }
 
-    public ResponseEntity<List<Customers>> getCustomers() {
-        List<CustomersEntity> customersList = customersRepository.findAll();
+    public ResponseEntity<List<Customers>> getCustomers(@Valid Integer page, @Valid Integer size) {
 
-        List<Customers> customers = new ArrayList<Customers>();
-        for(int i = 0; i < customersList.size(); i++)
-        {
-            customers.add(i,CustomersEntityToCustomers(customersList.get(i)));
-        }
+        if(page < 0 || size < 1)
+            return ResponseEntity.badRequest().build();
+
+        Page<CustomersEntity> customersPage = customersRepository.findAll(PageRequest.of(page, size));
+
+        List<Customers> customers = customersPage.map(e -> CustomersEntityToCustomers(e)).toList();
 
         return ResponseEntity.ok(customers);
     }

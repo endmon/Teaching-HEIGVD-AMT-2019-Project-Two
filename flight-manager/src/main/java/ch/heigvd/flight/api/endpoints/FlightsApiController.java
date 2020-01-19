@@ -10,6 +10,8 @@ import io.swagger.annotations.*;
 import org.hibernate.annotations.common.util.impl.LoggerFactory;
 import org.slf4j.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -67,15 +69,14 @@ public class FlightsApiController implements FlightsApi {
 
     }
 
-    public ResponseEntity<List<Flights>> getFlights() {
+    public ResponseEntity<List<Flights>> getFlights(@Valid Integer page, @Valid Integer size) {
 
-        List<FlightsEntity> flightsList = flightsRepository.findAll();
+        if(page < 0 || size < 1)
+            return ResponseEntity.badRequest().build();
 
-        List<Flights> flights = new ArrayList<Flights>();
-        for(int i = 0; i < flightsList.size(); i++)
-        {
-            flights.add(i,FlightsEntityToFlights(flightsList.get(i)));
-        }
+        Page<FlightsEntity> flightsPage = flightsRepository.findAll(PageRequest.of(page, size));
+
+        List<Flights> flights = flightsPage.map(e -> FlightsEntityToFlights(e)).toList();
 
         return ResponseEntity.ok(flights);
     }

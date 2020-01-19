@@ -27,7 +27,7 @@ import javax.validation.constraints.*;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2020-01-19T18:31:31.451+01:00[Europe/Berlin]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2020-01-19T20:12:27.294+01:00[Europe/Berlin]")
 
 @Validated
 @Api(value = "flights", description = "the flights API")
@@ -93,7 +93,7 @@ public interface FlightsApi {
     @RequestMapping(value = "/flights",
         produces = { "application/json" }, 
         method = RequestMethod.GET)
-    default ResponseEntity<List<Flights>> getFlights() {
+    default ResponseEntity<List<Flights>> getFlights(@ApiParam(value = "", defaultValue = "0") @Valid @RequestParam(value = "page", required = false, defaultValue="0") Integer page,@ApiParam(value = "", defaultValue = "10") @Valid @RequestParam(value = "size", required = false, defaultValue="10") Integer size) {
         getRequest().ifPresent(request -> {
             for (MediaType mediaType: MediaType.parseMediaTypes(request.getHeader("Accept"))) {
                 if (mediaType.isCompatibleWith(MediaType.valueOf("application/json"))) {
