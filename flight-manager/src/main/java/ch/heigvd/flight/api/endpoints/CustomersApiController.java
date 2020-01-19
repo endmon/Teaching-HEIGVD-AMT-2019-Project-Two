@@ -25,6 +25,7 @@ import javax.validation.constraints.*;
 import javax.validation.Valid;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-01-16T15:39:21.212Z")
 
@@ -64,8 +65,13 @@ public class CustomersApiController implements CustomersApi {
     }
 
     public ResponseEntity<List<Customers>> getCustomers() {
-        Page<CustomersEntity> customersList = customersRepository.findAll();
-        List<Customers> customers = customersList.map(e -> CustomersEntityToCustomers(e)).toList();
+        List<CustomersEntity> customersList = customersRepository.findAll();
+
+        List<Customers> customers = new ArrayList<Customers>();
+        for(int i = 0; i < customersList.size(); i++)
+        {
+            customers.add(i,CustomersEntityToCustomers(customersList.get(i)));
+        }
 
         return ResponseEntity.ok(customers);
     }
