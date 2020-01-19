@@ -56,6 +56,8 @@ Nous avons une deuxième table flight. Un flight est composé d'un nom, d'un poi
 
 L'entité flight et customer se comporte de la même façont. On peut ajouter un élément, le récupérer avec son Id, le supprimer avec son Id et récupérer tous les éléments avec une pagination. Page et size en paramètre dans l'url pour choisir quels le nombre d'éléments qu'on veut récupérer.
 
+![](./doc/schema.PNG)
+
 ### Lancer l'application
 
 Commencer par lancer le script run-docker.sh\
