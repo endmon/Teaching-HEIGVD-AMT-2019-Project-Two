@@ -22,7 +22,7 @@ formatter.match({
   "location": "CreationSteps.there_is_a_Users_server()"
 });
 formatter.result({
-  "duration": 2230492300,
+  "duration": 2004819100,
   "status": "passed"
 });
 formatter.scenario({
@@ -52,14 +52,14 @@ formatter.match({
   "location": "CreationSteps.i_have_a_user_payload()"
 });
 formatter.result({
-  "duration": 271000,
+  "duration": 191500,
   "status": "passed"
 });
 formatter.match({
   "location": "CreationSteps.i_POST_it_to_the_users_endpoint()"
 });
 formatter.result({
-  "duration": 1942506000,
+  "duration": 128692800,
   "status": "passed"
 });
 formatter.match({
@@ -72,8 +72,9 @@ formatter.match({
   "location": "CreationSteps.i_receive_a_status_code(int)"
 });
 formatter.result({
-  "duration": 3477800,
-  "status": "passed"
+  "duration": 2497300,
+  "error_message": "java.lang.AssertionError: expected:\u003c201\u003e but was:\u003c403\u003e\r\n\tat org.junit.Assert.fail(Assert.java:88)\r\n\tat org.junit.Assert.failNotEquals(Assert.java:834)\r\n\tat org.junit.Assert.assertEquals(Assert.java:645)\r\n\tat org.junit.Assert.assertEquals(Assert.java:631)\r\n\tat ch.heigvd.users.api.spec.steps.CreationSteps.i_receive_a_status_code(CreationSteps.java:76)\r\n\tat ✽.Then I receive a 201 status code(creation.feature:9)\r\n",
+  "status": "failed"
 });
 formatter.background({
   "line": 3,
@@ -91,7 +92,7 @@ formatter.match({
   "location": "CreationSteps.there_is_a_Users_server()"
 });
 formatter.result({
-  "duration": 431200,
+  "duration": 531300,
   "status": "passed"
 });
 formatter.scenario({
@@ -121,14 +122,14 @@ formatter.match({
   "location": "CreationSteps.i_have_an_already_existing_user_payload()"
 });
 formatter.result({
-  "duration": 60800,
+  "duration": 35800,
   "status": "passed"
 });
 formatter.match({
   "location": "CreationSteps.i_POST_it_to_the_users_endpoint()"
 });
 formatter.result({
-  "duration": 16979400,
+  "duration": 10477100,
   "status": "passed"
 });
 formatter.match({
@@ -141,7 +142,7 @@ formatter.match({
   "location": "CreationSteps.i_receive_a_status_code(int)"
 });
 formatter.result({
-  "duration": 87200,
+  "duration": 87400,
   "status": "passed"
 });
 formatter.uri("login.feature");
@@ -168,7 +169,7 @@ formatter.match({
   "location": "CreationSteps.there_is_a_Users_server()"
 });
 formatter.result({
-  "duration": 615300,
+  "duration": 695400,
   "status": "passed"
 });
 formatter.scenario({
@@ -203,14 +204,14 @@ formatter.match({
   "location": "LoginSteps.i_have_a_user_credentials_payload()"
 });
 formatter.result({
-  "duration": 226800,
+  "duration": 320200,
   "status": "passed"
 });
 formatter.match({
   "location": "LoginSteps.i_POST_it_to_the_login_endpoint()"
 });
 formatter.result({
-  "duration": 162323300,
+  "duration": 112578100,
   "status": "passed"
 });
 formatter.match({
@@ -223,14 +224,14 @@ formatter.match({
   "location": "CreationSteps.i_receive_a_status_code(int)"
 });
 formatter.result({
-  "duration": 108100,
+  "duration": 105900,
   "status": "passed"
 });
 formatter.match({
   "location": "LoginSteps.i_receive_a_jwttoken()"
 });
 formatter.result({
-  "duration": 74900,
+  "duration": 63000,
   "status": "passed"
 });
 formatter.uri("password.feature");
@@ -257,7 +258,7 @@ formatter.match({
   "location": "CreationSteps.there_is_a_Users_server()"
 });
 formatter.result({
-  "duration": 903800,
+  "duration": 676700,
   "status": "passed"
 });
 formatter.scenario({
@@ -287,14 +288,14 @@ formatter.match({
   "location": "PasswordSteps.i_have_a_user_jwttoken_corresponding_to_email_payload()"
 });
 formatter.result({
-  "duration": 286400,
+  "duration": 269500,
   "status": "passed"
 });
 formatter.match({
   "location": "PasswordSteps.i_POST_it_to_the_user_test_test_com_endpoint()"
 });
 formatter.result({
-  "duration": 266574800,
+  "duration": 133183100,
   "status": "passed"
 });
 formatter.match({
@@ -307,7 +308,7 @@ formatter.match({
   "location": "CreationSteps.i_receive_a_status_code(int)"
 });
 formatter.result({
-  "duration": 1412400,
+  "duration": 119000,
   "status": "passed"
 });
 });
