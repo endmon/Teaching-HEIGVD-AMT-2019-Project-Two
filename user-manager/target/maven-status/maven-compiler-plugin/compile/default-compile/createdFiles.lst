@@ -1,4 +1,3 @@
-ch\heigvd\user\api\interceptor\TokenInterceptor.class
 ch\heigvd\user\RFC3339DateFormat.class
 ch\heigvd\user\api\model\User.class
 ch\heigvd\user\Swagger2SpringBoot.class

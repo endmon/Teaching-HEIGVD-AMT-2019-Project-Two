@@ -2,7 +2,38 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e9ed737e-9e59-4589-b3e9-46d4ae6b5f5d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/heigvd/user/api/util/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/heigvd/user/api/util/Utils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../auth-specs/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../auth-specs/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../auth-specs/executableSpecification.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../auth-specs/executableSpecification.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../auth-specs/src/test/java/ch/heigvd/users/api/spec/steps/CreationSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/../auth-specs/src/test/java/ch/heigvd/users/api/spec/steps/CreationSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../auth-specs/src/test/java/ch/heigvd/users/api/spec/steps/PasswordSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/../auth-specs/src/test/java/ch/heigvd/users/api/spec/steps/PasswordSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../auth-specs/src/test/resources/scenarios/creation.feature" beforeDir="false" afterPath="$PROJECT_DIR$/../auth-specs/src/test/resources/scenarios/creation.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../auth-specs/target/cucumber/report.js" beforeDir="false" afterPath="$PROJECT_DIR$/../auth-specs/target/cucumber/report.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../auth-specs/target/generated-sources/swagger/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../auth-specs/target/generated-sources/swagger/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../auth-specs/target/generated-sources/swagger/ch/heigvd/users/ApiException.java" beforeDir="false" afterPath="$PROJECT_DIR$/../auth-specs/target/generated-sources/swagger/ch/heigvd/users/ApiException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../auth-specs/target/generated-sources/swagger/ch/heigvd/users/Configuration.java" beforeDir="false" afterPath="$PROJECT_DIR$/../auth-specs/target/generated-sources/swagger/ch/heigvd/users/Configuration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../auth-specs/target/generated-sources/swagger/ch/heigvd/users/Pair.java" beforeDir="false" afterPath="$PROJECT_DIR$/../auth-specs/target/generated-sources/swagger/ch/heigvd/users/Pair.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../auth-specs/target/generated-sources/swagger/ch/heigvd/users/StringUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/../auth-specs/target/generated-sources/swagger/ch/heigvd/users/StringUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../auth-specs/target/generated-sources/swagger/ch/heigvd/users/api/dto/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/../auth-specs/target/generated-sources/swagger/ch/heigvd/users/api/dto/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../auth-specs/target/generated-sources/swagger/ch/heigvd/users/api/dto/UserCredentials.java" beforeDir="false" afterPath="$PROJECT_DIR$/../auth-specs/target/generated-sources/swagger/ch/heigvd/users/api/dto/UserCredentials.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../auth-specs/target/generated-sources/swagger/ch/heigvd/users/auth/ApiKeyAuth.java" beforeDir="false" afterPath="$PROJECT_DIR$/../auth-specs/target/generated-sources/swagger/ch/heigvd/users/auth/ApiKeyAuth.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../auth-specs/target/generated-sources/swagger/ch/heigvd/users/auth/HttpBearerAuth.java" beforeDir="false" afterPath="$PROJECT_DIR$/../auth-specs/target/generated-sources/swagger/ch/heigvd/users/auth/HttpBearerAuth.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../auth-specs/target/surefire-reports/TEST-ch.heigvd.users.api.spec.SpecificationTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../auth-specs/target/surefire-reports/TEST-ch.heigvd.users.api.spec.SpecificationTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../auth-specs/target/surefire-reports/ch.heigvd.users.api.spec.SpecificationTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../auth-specs/target/surefire-reports/ch.heigvd.users.api.spec.SpecificationTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../auth-specs/target/test-classes/ch/heigvd/users/api/spec/steps/CreationSteps.class" beforeDir="false" afterPath="$PROJECT_DIR$/../auth-specs/target/test-classes/ch/heigvd/users/api/spec/steps/CreationSteps.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../auth-specs/target/test-classes/ch/heigvd/users/api/spec/steps/PasswordSteps.class" beforeDir="false" afterPath="$PROJECT_DIR$/../auth-specs/target/test-classes/ch/heigvd/users/api/spec/steps/PasswordSteps.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../auth-specs/target/test-classes/scenarios/creation.feature" beforeDir="false" afterPath="$PROJECT_DIR$/../auth-specs/target/test-classes/scenarios/creation.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/heigvd/user/api/interceptor/TokenInterceptor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ch/heigvd/user/api/interceptor/TokenInterceptor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-sources/openapi/src/main/java/ch/heigvd/user/api/LoginApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/openapi/src/main/java/ch/heigvd/user/api/LoginApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-sources/openapi/src/main/java/ch/heigvd/user/api/UsersApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/openapi/src/main/java/ch/heigvd/user/api/UsersApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-sources/openapi/src/main/java/ch/heigvd/user/api/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/openapi/src/main/java/ch/heigvd/user/api/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/generated-sources/openapi/src/main/java/ch/heigvd/user/api/model/UserCredentials.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-sources/openapi/src/main/java/ch/heigvd/user/api/model/UserCredentials.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/swagger-spring-1.0.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/swagger-spring-1.0.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/swagger-spring-1.0.0.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/swagger-spring-1.0.0.jar.original" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -18,39 +49,6 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ch/heigvd/user/api/endpoints/LoginApiController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="40" column="100" selection-start-line="40" selection-start-column="100" selection-end-line="40" selection-end-column="100" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ch/heigvd/user/api/interceptor/TokenInterceptor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="40" column="7" selection-start-line="40" selection-start-column="7" selection-end-line="40" selection-end-column="7" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/api-spec.yaml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="27" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="17">
@@ -59,10 +57,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ch/heigvd/user/api/util/Utils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="179">
+            <state relative-caret-position="255">
               <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
             </state>
           </provider>
@@ -80,7 +78,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
+            <state relative-caret-position="2516">
               <caret line="148" column="20" selection-start-line="148" selection-start-column="20" selection-end-line="148" selection-end-column="20" />
             </state>
           </provider>
@@ -89,8 +87,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ch/heigvd/user/api/endpoints/UsersApiController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-144">
-              <caret line="87" column="8" lean-forward="true" selection-start-line="87" selection-start-column="8" selection-end-line="87" selection-end-column="8" />
+            <state relative-caret-position="1173">
+              <caret line="87" column="8" selection-start-line="87" selection-start-column="8" selection-end-line="87" selection-end-column="8" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ch/heigvd/user/Swagger2SpringBoot.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="104">
+              <caret line="12" column="51" selection-start-line="12" selection-start-column="51" selection-end-line="12" selection-end-column="51" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -110,8 +120,32 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ch/heigvd/user/api/util/JWTHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="539">
+            <state relative-caret-position="632">
               <caret line="49" column="47" selection-start-line="49" selection-start-column="47" selection-end-line="49" selection-end-column="47" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ch/heigvd/user/repositories/UserRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="39" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ch/heigvd/user/entities/UserEntity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="123">
+              <caret line="29" selection-start-line="29" selection-end-line="29" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -197,7 +231,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="676" />
     <option name="width" value="697" />
     <option name="height" value="735" />
@@ -239,7 +273,55 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="user" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="user-manager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="user-manager" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="endpoints" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="user-manager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="user-manager" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="exceptions" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="user-manager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="user-manager" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="util" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="user-manager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="user-manager" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="user-manager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="user-manager" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="entities" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="user-manager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="user-manager" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="repositories" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="user-manager" type="b2602c69:ProjectViewProjectNode" />
@@ -279,7 +361,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Utils">
+  <component name="RunManager" selected="Spring Boot.Swagger2SpringBoot (1)">
     <configuration name="Utils" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ch.heigvd.user.api.util.Utils" />
       <module name="user-manager" />
@@ -366,18 +448,19 @@
       <workItem from="1579337203576" duration="7265000" />
       <workItem from="1579346562729" duration="1702000" />
       <workItem from="1579418060474" duration="1534000" />
-      <workItem from="1579430940148" duration="7355000" />
+      <workItem from="1579430940148" duration="8757000" />
+      <workItem from="1579466401569" duration="1496000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="101579000" />
+    <option name="totallyTimeSpent" value="104477000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27760968" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28214827" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -467,16 +550,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ch/heigvd/user/api/UserApi.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/ch/heigvd/user/api/endpoints/UserApiController.java" />
-    <entry file="file://$PROJECT_DIR$/images/mysql/Dockerfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="17" selection-start-column="17" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/images/phpmyadmin/Dockerfile">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/images/mysql/Dockerfile" />
+    <entry file="file://$PROJECT_DIR$/images/phpmyadmin/Dockerfile" />
     <entry file="file://$PROJECT_DIR$/src/main/java/ch/heigvd/user/api/util/ApiOriginFilter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -510,16 +585,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/heigvd/user/repositories/UserRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="39" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/target/generated-sources/openapi/src/main/java/ch/heigvd/user/api/UsersApi.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-175">
@@ -527,63 +592,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/images/mysql/data/user_data.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/images/mysql/data/user_auth.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="13" column="22" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/heigvd/user/entities/UserEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="29" selection-start-line="29" selection-end-line="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#685#686#0" expanded="true" />
-            <element signature="e#723#724#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/images/mysql/data/user_data.csv" />
+    <entry file="file://$PROJECT_DIR$/images/mysql/data/user_auth.sql" />
     <entry file="file://$PROJECT_DIR$/target/generated-sources/openapi/src/main/java/ch/heigvd/user/api/model/JWTToken.java" />
-    <entry file="file://$PROJECT_DIR$/topology/docker-compose.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="32" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/topology/docker-compose.yml" />
     <entry file="file://$PROJECT_DIR$/target/generated-sources/openapi/src/main/java/ch/heigvd/user/api/model/InlineObject.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/heigvd/user/Swagger2SpringBoot.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="12" column="51" selection-start-line="12" selection-start-column="51" selection-end-line="12" selection-end-column="51" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml" />
     <entry file="file://$PROJECT_DIR$/web/index.jsp" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/heigvd/user/api/interceptor/TokenInterceptor.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/ch/heigvd/user/api/endpoints/LoginApiController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="40" column="100" selection-start-line="40" selection-start-column="100" selection-end-line="40" selection-end-column="100" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/heigvd/user/api/interceptor/TokenInterceptor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="40" column="7" selection-start-line="40" selection-start-column="7" selection-end-line="40" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -597,27 +617,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/target/generated-sources/openapi/src/main/java/ch/heigvd/user/api/model/User.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        <state relative-caret-position="17">
+          <caret line="1" column="45" selection-start-line="1" selection-start-column="45" selection-end-line="1" selection-end-column="45" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/heigvd/user/api/util/Utils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="148" column="20" selection-start-line="148" selection-start-column="20" selection-end-line="148" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/heigvd/user/api/endpoints/UsersApiController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-144">
-          <caret line="87" column="8" lean-forward="true" selection-start-line="87" selection-start-column="8" selection-end-line="87" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="255">
+          <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -628,16 +638,43 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="45" selection-start-line="1" selection-start-column="45" selection-end-line="1" selection-end-column="45" />
+        <state relative-caret-position="2516">
+          <caret line="148" column="20" selection-start-line="148" selection-start-column="20" selection-end-line="148" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/heigvd/user/api/endpoints/UsersApiController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1173">
+          <caret line="87" column="8" selection-start-line="87" selection-start-column="8" selection-end-line="87" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/target/generated-sources/openapi/src/main/java/ch/heigvd/user/api/model/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/heigvd/user/Swagger2SpringBoot.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="12" column="51" selection-start-line="12" selection-start-column="51" selection-end-line="12" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ch/heigvd/user/api/util/JWTHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="539">
+        <state relative-caret-position="632">
           <caret line="49" column="47" selection-start-line="49" selection-start-column="47" selection-end-line="49" selection-end-column="47" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -645,10 +682,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/heigvd/user/api/util/Utils.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/heigvd/user/repositories/UserRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+        <state relative-caret-position="119">
+          <caret line="7" column="39" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/heigvd/user/entities/UserEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="123">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -1,22 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: ch.heigvd.users.api.spec.SpecificationTest
 -------------------------------------------------------------------------------
-Tests run: 21, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 3.868 sec <<< FAILURE!
-Then I receive a 201 status code(Scenario: create a new user)  Time elapsed: 0.004 sec  <<< FAILURE!
-java.lang.AssertionError: expected:<201> but was:<403>
-	at org.junit.Assert.fail(Assert.java:88)
-	at org.junit.Assert.failNotEquals(Assert.java:834)
-	at org.junit.Assert.assertEquals(Assert.java:645)
-	at org.junit.Assert.assertEquals(Assert.java:631)
-	at ch.heigvd.users.api.spec.steps.CreationSteps.i_receive_a_status_code(CreationSteps.java:76)
-	at ?.Then I receive a 201 status code(creation.feature:9)
-
-Scenario: create a new user  Time elapsed: 0.004 sec  <<< FAILURE!
-java.lang.AssertionError: expected:<201> but was:<403>
-	at org.junit.Assert.fail(Assert.java:88)
-	at org.junit.Assert.failNotEquals(Assert.java:834)
-	at org.junit.Assert.assertEquals(Assert.java:645)
-	at org.junit.Assert.assertEquals(Assert.java:631)
-	at ch.heigvd.users.api.spec.steps.CreationSteps.i_receive_a_status_code(CreationSteps.java:76)
-	at ?.Then I receive a 201 status code(creation.feature:9)
-
+Tests run: 26, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.648 sec

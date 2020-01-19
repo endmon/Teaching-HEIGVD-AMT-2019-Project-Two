@@ -37,7 +37,7 @@ public class PasswordSteps {
     public void i_POST_it_to_the_user_test_test_com_endpoint() throws Throwable {
         try {
             //the token is an admin token
-            environment.setLastApiResponse(api.changePasswordWithHttpInfo("test@test.com", environment.getJwttoken(), "test2"));
+            environment.setLastApiResponse(api.changePasswordWithHttpInfo("test@test.com", environment.getJwttoken(), "test"));
             environment.setLastApiCallThrewException(false);
             environment.setLastApiException(null);
             environment.setLastStatusCode(environment.getLastApiResponse().getStatusCode());

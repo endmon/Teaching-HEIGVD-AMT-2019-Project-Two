@@ -12,3 +12,8 @@ Feature: Creation of user
     Given I have an already existing user payload
     When I POST it to the /users endpoint
     Then I receive a 403 status code
+    
+  Scenario: create a user without admin rights
+    Given I have a user payload
+    When I POST it to the /users endpoint whithout admin rights
+    Then I receive a 401 status code

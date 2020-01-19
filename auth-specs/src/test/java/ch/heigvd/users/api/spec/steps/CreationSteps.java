@@ -71,6 +71,25 @@ public class CreationSteps {
 
     }
 
+    @When("^I POST it to the /users endpoint whithout admin rights$")
+    public void i_POST_it_to_the_users_endpoint_without_admin_rights() throws Throwable {
+        try {
+            //the token is a non admin token
+            environment.setLastApiResponse(api.registerWithHttpInfo("eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhcGktdXNlciIsInN1YiI6InRlc3RAdGVzdC5jb20iLCJhZG1pbiI6ZmFsc2V9.C0V0qsQ9EXQ6Vmb84cSrdtTB-mz_FQQwbRxo6LpqWaY",environment.getUser()));
+            environment.setLastApiCallThrewException(false);
+            environment.setLastApiException(null);
+            environment.setLastStatusCode(environment.getLastApiResponse().getStatusCode());
+        } catch (ApiException e) {
+            environment.setLastApiCallThrewException(true);
+            environment.setLastApiResponse(null);
+            environment.setLastApiException(e);
+            environment.setLastStatusCode(environment.getLastApiException().getCode());
+        }
+
+    }
+
+
+
     @Then("^I receive a (\\d+) status code$")
     public void i_receive_a_status_code(int arg1) throws Throwable {
         assertEquals(arg1, environment.getLastStatusCode());

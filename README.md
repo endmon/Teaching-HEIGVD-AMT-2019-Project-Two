@@ -1,42 +1,54 @@
 # Teaching-HEIGVD-AMT-2019-Project-Two
-## Objectives
 
-The objectives of this project is to design, specify, implement and validate **2 RESTful APIs** (you can think of them as 2 "micro-services"), using a set of technologies that build upon or complement Java EE standards. Namely, the goal is to use:
+## Rapport
 
-* **Spring Boot**, **Spring Data**, **Spring MVC** and **Spring Data** for the implementation of the endpoints and of the persistence;
-* **Swagger** (**Open API**) to create a formal documentation of the REST APIs (this formal documentation has to be used in the development cycle);
-* JSON Web Tokens (**JWT**) to secure the RESTful endpoints;
-* **CucumberJVM** to implement BDD tests.
+##### Auteurs
 
-## Functional requirements
+Baptiste Hardrick\
+Miguel Gouveia
 
-* Design, specify and implement **a first API** that is used to **manage** user accounts. 
-  * Every account has at least an e-mail (used as the primary ID), a first name, a last name and a password. 
-  * The API must also allow the user to change its password. 
-  * A user cannot change the password of someone else.
-  * The API also exposes an endpoint to authenticate a user: it returns a JWT token if the provided credentials are correct.
-  * Specify, implement and validate at least one of these features:
-    * Only a user with an ADMIN role can create accounts.
-    * A user with an ADMIN role can block/unblock a user account; when blocked, the user cannot login. Be mindful of JWT tokens.
-    * A user needs to prove that he owns the e-mail address (by receiving an e-mail with a code).
-    * A user can ask to reset his password, which is done via e-mail (typical reset password).
-* Like in the first project, **expose at least 3 entities through a second REST API** (one of them capturing the relationship between the two others; for instance, *Membership* would capture the relationship between *Person* and *Group*). You can use the same entities that you used in the first project, but do not have to.
-  * The REST API must support CRUD operations on the 2 main entities; you have to specify what is the intended behavior when you delete an entity.
-  * The REST API must provide a way to associate/de-associate a pair of two main entities.
-  * it is up to you to define the structure of your payloads (DTOs), but you have to justify your choices in the report (and to explain what are the tradeoffs)
-* The REST APIs must implement **pagination**. It is up to you to decide how the client and server negotiate the parameters, but you have to explain it in your documentation.
+## User API
 
-## Constraints
+La première API est utilisée pour gérer des comptes utilisateur.\
+Chaque compte a un e-mail, un nom, prenom, mot-de-passe et un booléen déterminant s'il est admin ou non.\
+Un utilisateur peut changer son mot-de-passe mais pas celui d'un autre. Seul un admin le peut.\
+Un administrateur peut voir tous les comptes, un utilisateur ne peut voir que le sien.\
+Nous avons aussi fait en sorte que seul un compte administrateur peut créer un compte.\
+Pour vérifier si un utilisateur est identifié en tant qu'administrateur ou non, il doit soumettre un token JWT reçu lorsqu'il se connecte.
 
-- You HAVE TO use Spring Boot, Spring MVC and Spring Data.
-- You MUST NOT use Spring Data REST (MUST NOT = you are not allowed).
-- You MUST specify both APIs with Swagger / Open API.
-- You MUST implement two Spring Boot projects, each producing a different .jar file.
-- You must deliver a Docker Compose topology, with (at least):
-  - A container with the first back-end
-  - A container with the second back-end
-  - A container with the RDBMS; every back-end should have its own database (no shared tables)
-  - A container with Traefik, acting as a dynamic reverse proxy
+### Respect des contraintes
+Les contraintes ont été respectées en général, cependant nous n'avons pas implementé le container Traefik ainsi que le fait d'avoir nos back-end qui tournent sur un container.
+
+### Lancer l'application
+Commencer par lancer le script run-docker.sh\
+Une fois ce dernier lancé, démarrer le script run-user-manager.sh\
+Enfin pour lancer les tests Cucumber, lancer le script run-user-manager-test.sh\
+Pour tester l'api, aller sur [localhost:8080/api-user-manager](http://localhost:8080/api-user-manager/swagger-ui.html) </br>
+
+### Ce qui a été implémenté
+Les features de l'API ont été décrit précédemment.\
+Pour cette API, nous n'avons eu besoin d'implémenter qu'une entité: UserEntity. Celle-ci comprenait les spécifications propres à un utilisateur.\
+Nous avons eu de la difficulté à implémenter des intercepteurs, ce pourquoi il n'y en a pas dans cette API.\
+Nous avons implémenté deux classes utilitaires: un JWTHelper sous forme de service et une classe Utils. La première s'occupe de la génération
+de token JWT ainsi que leur décodage. La seconde s'occupe du hash des mot-de-passes ainsi que de la vérification du hash contenu dans la base de donnée avec
+le mot de passe soumis par l'utilisateur.\
+
+### Tests
+Nous avons testé tous les chemins implémentés dans l'API directement [ici](http://localhost:8080/api-user-manager/swagger-ui.html).\
+Des tests plus rigoureux ont été implémentés de manière automatique avec Cucumber dans divers scénarios dans le dossier ```/auth-specs```.\
+Ceux-ci ne testent pas tous les chemins possible mais seulement les principales contraintes comme celle de la création d'un utilisateur permise seulement par un compte
+administrateur, le changement de mot de passe ainsi que le login.
+
+### Résultat des tests
+Tous nos tests ont passé:
+![](https://github.com/endmon/Teaching-HEIGVD-AMT-2019-Project-Two/blob/master/doc/cucumber_a.PNG)\
+![](https://github.com/endmon/Teaching-HEIGVD-AMT-2019-Project-Two/blob/master/doc/cucumber_b.PNG)\
+Nous pouvons voir que tous les scénarios se passent comme prévu, nous pouvons ainsi être sûr que les routes testées n'ont pas de problème.
+
+### Bugs et limitations
+Aucun bug n'a été observé pour cette API.\
+Il y a une limitation au niveau des tests; quand on lance la première fois, tous les tests passent, mais la seconde fios, un test ne passe pas.
+Cela est du au fait que dans un des tests, on ajoute un utilisateur dans la base de donnée. Si on réessaie de l'ajouter une seconde fois, l'opération est refusée car il n'y a qu'un compte par adresse mail.
 
 ## Non-functional requirements
 
@@ -53,9 +65,6 @@ The objectives of this project is to design, specify, implement and validate **2
 
 ## Organization
 
-**You will work in teams of 2 students**. For effective learning, it is important that each person works on every aspect (do not split code vs testing, because you will miss learning opportunities).
-
-**Deadline for submission: Sunday, January 19th, 23h.**
 
 **Deliverables:**
 
@@ -68,38 +77,4 @@ The objectives of this project is to design, specify, implement and validate **2
   * You **testing strategy**: we want to see that you understand the role and value of the different types of automated tests. We want to see that you can explain what tools can be used t implement these types of tests. We want to have your opinion on the effectiveness of your test strategy (what do you like and what do you not like about your test suite?)
   * In particular a detailed report about your **experiment** to answer the performance tests. We want a clear description of the experiment. We want numbers, graphs and explanations of what they mean.
   * A list of **known bugs and limitations**.
-
-## Proposed timeline
-
-You don't have to follow this sequence if you prefer to do some of the tasks before. However, if you don't know how to start, this is probably a **decomposition** that will help you.
-
-**Week 1 (December 2nd):**
-
-* Get familiar with the 2 reference projects; be able to build and run them on your machine; be able to run the CucumberJVM tests.
-* Do a first draft of the 2 REST APIs; have them reviewed if you are creating an API for the first time or are not sure about some design choices.
-* Get familiar with the Open API syntax; use the Swagger Editor or one of the IDE plugins to write your spec.
-* Create a git repo for your project. You should have 4 modules: 2 backend and 2 BDD projects. Use the reference projects as a template. Prepare the Docker Compose topology and images. Prepare scripts to build the code and the Docker the images.
-
-**Week 2 (December 9th):**
-
-* Implement a **first endpoint** (one of the 2 main entities) end-to-end. You should be able to perform CRUD operations on the endpoint and validate that it works with Cucumber. One person can focus on the backend, the other on the Cucumber tests.
-* Be mindful that **created resources have an owner**, and that only the owner should be able to access its resources (for RUD operations). Plan for that, even if you don't have your authentication service fully implemented.
-
-**Week 3 (December 16th):**
-
-* Design, implement and validate the **user management** and **authentication** API.
-* Go back to the first endpoint implementation and **enforce security rules**.
-* Implement BDD scenarios to validate that authentication and authorization rules work as expected.
-
-**Week 4 (January 6th):**
-
-* Implement the **second endpoint**, swapping the role (the person working on Spring Boot now works on Cucumber and vice versa)
-* Implement the **third endpoint**, to manage associations between entities (end-to-end, with tests)
-* Add **Traefik** in the Docker topology
-
-**Week 5 (January 13th):**
-
-* Performance tests with JMeter
-* Final packaging and validation
-* Documentation
 
