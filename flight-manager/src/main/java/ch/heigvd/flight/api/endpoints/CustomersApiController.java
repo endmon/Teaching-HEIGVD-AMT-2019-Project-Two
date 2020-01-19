@@ -79,7 +79,7 @@ public class CustomersApiController implements CustomersApi {
     private Customers CustomersEntityToCustomers(CustomersEntity customersEntity)
     {
         Customers customers = new Customers();
-        //customers.setCustomerId(customersEntity.getCustomer_id());
+        customers.setCustomerId(customersEntity.getCustomer_id());
         customers.setCustomerPseudo(customersEntity.getCustomer_pseudo());
         customers.setFirstname(customersEntity.getFirstname());
         customers.setLastname(customersEntity.getLastname());

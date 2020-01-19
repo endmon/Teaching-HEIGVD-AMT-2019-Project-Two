@@ -55,7 +55,7 @@ paths:
         '201':
           description: flight sent
           schema:
-            $ref: '#/definitions/Flight'
+            $ref: '#/definitions/Flights'
         '400':
           description: bad request
         '404':
@@ -142,8 +142,10 @@ definitions:
         type: string
       departure_time:
         type: integer
+        format: int64
       arrival_time:
         type: integer
+        format: int64
       start_point:
         type: string
       end_point:
@@ -155,12 +157,15 @@ definitions:
     properties:
       flight_id:
         type: integer
+        format: int64
       name:
         type: string
       departure_time:
         type: integer
+        format: int64
       arrival_time:
         type: integer
+        format: int64
       start_point:
         type: string
       end_point:
@@ -185,6 +190,7 @@ definitions:
     properties:
       customer_id:
         type: integer
+        format: int64
       customer_pseudo:
         type: string
       firstname:

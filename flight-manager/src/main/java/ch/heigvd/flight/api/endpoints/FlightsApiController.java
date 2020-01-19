@@ -57,13 +57,14 @@ public class FlightsApiController implements FlightsApi {
         return ResponseEntity.status(HttpStatus.valueOf(201)).build();
     }
 
-    public ResponseEntity<Flight> getFlight(@ApiParam(value = "",required=true) @PathVariable("flight_id") Integer flightId) {
+    public ResponseEntity<Flights> getFlight(@ApiParam(value = "",required=true) @PathVariable("flight_id") Integer flightId) {
 
-        Flights flight = new Flights();
+        Flights flights = new Flights();
         FlightsEntity flightsEntity = flightsRepository.findById(flightId);
-        flight = FlightsEntityToFlights(flightsEntity);
+        flights = FlightsEntityToFlights(flightsEntity);
 
-        return ResponseEntity.ok(flight);
+        return ResponseEntity.ok(flights);
+
     }
 
     public ResponseEntity<List<Flights>> getFlights() {
@@ -84,8 +85,8 @@ public class FlightsApiController implements FlightsApi {
         Flights flights = new Flights();
         //customers.setCustomerId(customersEntity.getCustomer_id());
         flights.setName(flightsEntity.getName());
-        flights.setDepartureTime(flightsEntity.getDeparture_time());
-        flights.setArrivalTime(flightsEntity.getArrival_time());
+        //flights.setDepartureTime(flightsEntity.getDeparture_time());
+        //flights.setArrivalTime(flightsEntity.getArrival_time());
         flights.setStartPoint(flightsEntity.getStart_point());
         flights.setEndPoint(flightsEntity.getEnd_point());
         flights.setPrice(flightsEntity.getPrice());

@@ -12,17 +12,17 @@ import javax.validation.constraints.*;
 /**
  * Flight
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2020-01-19T03:29:22.150+01:00[Europe/Berlin]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2020-01-19T12:31:54.987+01:00[Europe/Berlin]")
 
 public class Flight   {
   @JsonProperty("name")
   private String name;
 
   @JsonProperty("departure_time")
-  private Integer departureTime;
+  private Long departureTime;
 
   @JsonProperty("arrival_time")
-  private Integer arrivalTime;
+  private Long arrivalTime;
 
   @JsonProperty("start_point")
   private String startPoint;
@@ -53,7 +53,7 @@ public class Flight   {
     this.name = name;
   }
 
-  public Flight departureTime(Integer departureTime) {
+  public Flight departureTime(Long departureTime) {
     this.departureTime = departureTime;
     return this;
   }
@@ -65,15 +65,15 @@ public class Flight   {
   @ApiModelProperty(value = "")
 
 
-  public Integer getDepartureTime() {
+  public Long getDepartureTime() {
     return departureTime;
   }
 
-  public void setDepartureTime(Integer departureTime) {
+  public void setDepartureTime(Long departureTime) {
     this.departureTime = departureTime;
   }
 
-  public Flight arrivalTime(Integer arrivalTime) {
+  public Flight arrivalTime(Long arrivalTime) {
     this.arrivalTime = arrivalTime;
     return this;
   }
@@ -85,11 +85,11 @@ public class Flight   {
   @ApiModelProperty(value = "")
 
 
-  public Integer getArrivalTime() {
+  public Long getArrivalTime() {
     return arrivalTime;
   }
 
-  public void setArrivalTime(Integer arrivalTime) {
+  public void setArrivalTime(Long arrivalTime) {
     this.arrivalTime = arrivalTime;
   }
 

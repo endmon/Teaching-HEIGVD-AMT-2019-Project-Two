@@ -27,7 +27,7 @@ import javax.validation.constraints.*;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2020-01-19T03:29:22.150+01:00[Europe/Berlin]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2020-01-19T12:31:54.987+01:00[Europe/Berlin]")
 
 @Validated
 @Api(value = "flights", description = "the flights API")
@@ -63,19 +63,19 @@ public interface FlightsApi {
     }
 
 
-    @ApiOperation(value = "", nickname = "getFlight", notes = "get flight by id", response = Flight.class, tags={  })
+    @ApiOperation(value = "", nickname = "getFlight", notes = "get flight by id", response = Flights.class, tags={  })
     @ApiResponses(value = { 
-        @ApiResponse(code = 201, message = "flight sent", response = Flight.class),
+        @ApiResponse(code = 201, message = "flight sent", response = Flights.class),
         @ApiResponse(code = 400, message = "bad request"),
         @ApiResponse(code = 404, message = "not found") })
     @RequestMapping(value = "/flights/{flight_id}",
         produces = { "application/json" }, 
         method = RequestMethod.GET)
-    default ResponseEntity<Flight> getFlight(@ApiParam(value = "",required=true) @PathVariable("flight_id") Integer flightId) {
+    default ResponseEntity<Flights> getFlight(@ApiParam(value = "",required=true) @PathVariable("flight_id") Integer flightId) {
         getRequest().ifPresent(request -> {
             for (MediaType mediaType: MediaType.parseMediaTypes(request.getHeader("Accept"))) {
                 if (mediaType.isCompatibleWith(MediaType.valueOf("application/json"))) {
-                    String exampleString = "{ \"arrival_time\" : 6, \"start_point\" : \"start_point\", \"end_point\" : \"end_point\", \"price\" : 1, \"name\" : \"name\", \"departure_time\" : 0 }";
+                    String exampleString = "{ \"arrival_time\" : 1, \"start_point\" : \"start_point\", \"end_point\" : \"end_point\", \"price\" : 5, \"name\" : \"name\", \"departure_time\" : 6, \"flight_id\" : 0 }";
                     ApiUtil.setExampleResponse(request, "application/json", exampleString);
                     break;
                 }

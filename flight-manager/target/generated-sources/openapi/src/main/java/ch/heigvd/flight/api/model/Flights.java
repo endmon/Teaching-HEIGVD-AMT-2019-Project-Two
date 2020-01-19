@@ -12,20 +12,20 @@ import javax.validation.constraints.*;
 /**
  * Flights
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2020-01-19T03:29:22.150+01:00[Europe/Berlin]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2020-01-19T12:31:54.987+01:00[Europe/Berlin]")
 
 public class Flights   {
   @JsonProperty("flight_id")
-  private Integer flightId;
+  private Long flightId;
 
   @JsonProperty("name")
   private String name;
 
   @JsonProperty("departure_time")
-  private Integer departureTime;
+  private Long departureTime;
 
   @JsonProperty("arrival_time")
-  private Integer arrivalTime;
+  private Long arrivalTime;
 
   @JsonProperty("start_point")
   private String startPoint;
@@ -36,7 +36,7 @@ public class Flights   {
   @JsonProperty("price")
   private Integer price;
 
-  public Flights flightId(Integer flightId) {
+  public Flights flightId(Long flightId) {
     this.flightId = flightId;
     return this;
   }
@@ -48,11 +48,11 @@ public class Flights   {
   @ApiModelProperty(value = "")
 
 
-  public Integer getFlightId() {
+  public Long getFlightId() {
     return flightId;
   }
 
-  public void setFlightId(Integer flightId) {
+  public void setFlightId(Long flightId) {
     this.flightId = flightId;
   }
 
@@ -76,7 +76,7 @@ public class Flights   {
     this.name = name;
   }
 
-  public Flights departureTime(Integer departureTime) {
+  public Flights departureTime(Long departureTime) {
     this.departureTime = departureTime;
     return this;
   }
@@ -88,15 +88,15 @@ public class Flights   {
   @ApiModelProperty(value = "")
 
 
-  public Integer getDepartureTime() {
+  public Long getDepartureTime() {
     return departureTime;
   }
 
-  public void setDepartureTime(Integer departureTime) {
+  public void setDepartureTime(Long departureTime) {
     this.departureTime = departureTime;
   }
 
-  public Flights arrivalTime(Integer arrivalTime) {
+  public Flights arrivalTime(Long arrivalTime) {
     this.arrivalTime = arrivalTime;
     return this;
   }
@@ -108,11 +108,11 @@ public class Flights   {
   @ApiModelProperty(value = "")
 
 
-  public Integer getArrivalTime() {
+  public Long getArrivalTime() {
     return arrivalTime;
   }
 
-  public void setArrivalTime(Integer arrivalTime) {
+  public void setArrivalTime(Long arrivalTime) {
     this.arrivalTime = arrivalTime;
   }
 

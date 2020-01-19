@@ -12,11 +12,11 @@ import javax.validation.constraints.*;
 /**
  * Customers
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2020-01-19T03:29:22.150+01:00[Europe/Berlin]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2020-01-19T12:31:54.987+01:00[Europe/Berlin]")
 
 public class Customers   {
   @JsonProperty("customer_id")
-  private Integer customerId;
+  private Long customerId;
 
   @JsonProperty("customer_pseudo")
   private String customerPseudo;
@@ -33,7 +33,7 @@ public class Customers   {
   @JsonProperty("customer_pw")
   private String customerPw;
 
-  public Customers customerId(Integer customerId) {
+  public Customers customerId(Long customerId) {
     this.customerId = customerId;
     return this;
   }
@@ -45,11 +45,11 @@ public class Customers   {
   @ApiModelProperty(value = "")
 
 
-  public Integer getCustomerId() {
+  public Long getCustomerId() {
     return customerId;
   }
 
-  public void setCustomerId(Integer customerId) {
+  public void setCustomerId(Long customerId) {
     this.customerId = customerId;
   }
 
