@@ -12,8 +12,6 @@ public interface CustomersRepository extends CrudRepository<CustomersEntity, Lon
 
     void deleteById(long customer_id);
 
-    //Iterable<CustomersEntity> findAll();
-
     List<CustomersEntity> findAll();
 
 }

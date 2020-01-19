@@ -4,6 +4,7 @@ import ch.heigvd.flight.api.FlightsApi;
 import ch.heigvd.flight.api.model.Flight;
 import ch.heigvd.flight.api.model.Flights;
 import ch.heigvd.flight.repositories.FlightsRepository;
+import ch.heigvd.flight.entities.FlightsEntity;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.swagger.annotations.*;
 import org.hibernate.annotations.common.util.impl.LoggerFactory;
@@ -23,6 +24,7 @@ import javax.validation.constraints.*;
 import javax.validation.Valid;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2020-01-16T15:39:21.212Z")
 
@@ -37,23 +39,58 @@ public class FlightsApiController implements FlightsApi {
 
     public ResponseEntity<Void> addFlight(@ApiParam(value = "a new flight to the flight manager" ,required=true )  @Valid @RequestBody Flight flight) {
 
-        return new ResponseEntity<Void>(HttpStatus.NOT_IMPLEMENTED);
+        FlightsEntity NewFlight = new FlightsEntity();
+        NewFlight.setName(flight.getName());
+        NewFlight.setDeparture_time(flight.getDepartureTime());
+        NewFlight.setArrival_time(flight.getArrivalTime());
+        NewFlight.setStart_point(flight.getStartPoint());
+        NewFlight.setEnd_point(flight.getEndPoint());
+        NewFlight.setPrice(flight.getPrice());
+        flightsRepository.save(NewFlight);
+
+        return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
     public ResponseEntity<Void> deleteFlight(@ApiParam(value = "",required=true) @PathVariable("flight_id") Integer flightId) {
 
-        return new ResponseEntity<Void>(HttpStatus.NOT_IMPLEMENTED);
+        flightsRepository.deleteById(flightId);
+        return ResponseEntity.status(HttpStatus.valueOf(201)).build();
     }
 
     public ResponseEntity<Flight> getFlight(@ApiParam(value = "",required=true) @PathVariable("flight_id") Integer flightId) {
 
-        return new ResponseEntity<Flight>(HttpStatus.NOT_IMPLEMENTED);
+        Flights flight = new Flights();
+        FlightsEntity flightsEntity = flightsRepository.findById(flightId);
+        flight = FlightsEntityToFlights(flightsEntity);
+
+        return ResponseEntity.ok(flight);
     }
 
     public ResponseEntity<List<Flights>> getFlights() {
 
+        List<FlightsEntity> flightsList = flightsRepository.findAll();
 
-        return new ResponseEntity<List<Flights>>(HttpStatus.NOT_IMPLEMENTED);
+        List<Flights> flights = new ArrayList<Flights>();
+        for(int i = 0; i < flightsList.size(); i++)
+        {
+            flights.add(i,FlightsEntityToFlights(flightsList.get(i)));
+        }
+
+        return ResponseEntity.ok(flights);
+    }
+
+    private Flights FlightsEntityToFlights(FlightsEntity flightsEntity)
+    {
+        Flights flights = new Flights();
+        //customers.setCustomerId(customersEntity.getCustomer_id());
+        flights.setName(flightsEntity.getName());
+        flights.setDepartureTime(flightsEntity.getDeparture_time());
+        flights.setArrivalTime(flightsEntity.getArrival_time());
+        flights.setStartPoint(flightsEntity.getStart_point());
+        flights.setEndPoint(flightsEntity.getEnd_point());
+        flights.setPrice(flightsEntity.getPrice());
+
+        return flights;
     }
 
 }
