@@ -9,6 +9,7 @@ Miguel Gouveia
 
 ## User API
 
+Cette API se trouve dans le dossier user-manager.\
 La première API est utilisée pour gérer des comptes utilisateur.\
 Chaque compte a un e-mail, un nom, prenom, mot-de-passe et un booléen déterminant s'il est admin ou non.\
 Un utilisateur peut changer son mot-de-passe mais pas celui d'un autre. Seul un admin le peut.\
