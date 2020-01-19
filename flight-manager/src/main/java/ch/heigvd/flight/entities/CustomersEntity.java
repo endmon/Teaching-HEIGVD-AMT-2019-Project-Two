@@ -23,7 +23,7 @@ public class CustomersEntity implements Serializable {
     private String lastname;
 
     @Column(name="age")
-    private short age;
+    private int age;
 
     @Column(name="customer_pw")
     private String customer_pw;
@@ -31,6 +31,11 @@ public class CustomersEntity implements Serializable {
 
     public long getCustomer_id() {
         return customer_id;
+    }
+
+    public void setCustomer_id(long customer_id)
+    {
+        this.customer_id = customer_id;
     }
 
     public String getCustomer_pseudo() {
@@ -57,11 +62,11 @@ public class CustomersEntity implements Serializable {
         this.lastname = lastname;
     }
 
-    public short getAge() {
+    public int getAge() {
         return age;
     }
 
-    public void setAge(short age) {
+    public void setAge(int age) {
         this.age = age;
     }
 

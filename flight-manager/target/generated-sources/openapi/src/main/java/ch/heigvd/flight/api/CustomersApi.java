@@ -27,7 +27,7 @@ import javax.validation.constraints.*;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2020-01-18T15:31:43.221+01:00[Europe/Berlin]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2020-01-19T01:08:58.699+01:00[Europe/Berlin]")
 
 @Validated
 @Api(value = "customers", description = "the customers API")
@@ -63,19 +63,19 @@ public interface CustomersApi {
     }
 
 
-    @ApiOperation(value = "", nickname = "getCustomer", notes = "get customer by id", response = Customer.class, tags={  })
+    @ApiOperation(value = "", nickname = "getCustomer", notes = "get customer by id", response = Customers.class, tags={  })
     @ApiResponses(value = { 
-        @ApiResponse(code = 201, message = "customer sent", response = Customer.class),
+        @ApiResponse(code = 201, message = "customer sent", response = Customers.class),
         @ApiResponse(code = 400, message = "bad request"),
         @ApiResponse(code = 404, message = "not found") })
     @RequestMapping(value = "/customers/{customer_id}",
         produces = { "application/json" }, 
         method = RequestMethod.GET)
-    default ResponseEntity<Customer> getCustomer(@ApiParam(value = "",required=true) @PathVariable("customer_id") Integer customerId) {
+    default ResponseEntity<Customers> getCustomer(@ApiParam(value = "",required=true) @PathVariable("customer_id") Integer customerId) {
         getRequest().ifPresent(request -> {
             for (MediaType mediaType: MediaType.parseMediaTypes(request.getHeader("Accept"))) {
                 if (mediaType.isCompatibleWith(MediaType.valueOf("application/json"))) {
-                    String exampleString = "{ \"firstname\" : \"firstname\", \"customer_pseudo\" : \"customer_pseudo\", \"customer_pw\" : \"customer_pw\", \"age\" : 0, \"lastname\" : \"lastname\" }";
+                    String exampleString = "{ \"firstname\" : \"firstname\", \"customer_pseudo\" : \"customer_pseudo\", \"customer_pw\" : \"customer_pw\", \"customer_id\" : 0, \"age\" : 6, \"lastname\" : \"lastname\" }";
                     ApiUtil.setExampleResponse(request, "application/json", exampleString);
                     break;
                 }

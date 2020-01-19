@@ -4,7 +4,7 @@ info:
   title: Flight Api
   description: An API to manage flight
 host: localhost:8081
-basePath: /api
+basePath: /api-flight-manager
 schemes:
   - http
 paths:
@@ -118,7 +118,7 @@ paths:
         '201':
           description: customer sent
           schema:
-            $ref: '#/definitions/Customer'
+            $ref: '#/definitions/Customers'
         '400':
           description: bad request
         '404':

@@ -118,7 +118,7 @@ paths:
         '201':
           description: customer sent
           schema:
-            $ref: '#/definitions/Customer'
+            $ref: '#/definitions/Customers'
         '400':
           description: bad request
         '404':

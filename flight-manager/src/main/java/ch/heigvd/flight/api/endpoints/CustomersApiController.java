@@ -3,12 +3,14 @@ package ch.heigvd.flight.api.endpoints;
 import ch.heigvd.flight.api.CustomersApi;
 import ch.heigvd.flight.api.model.Customers;
 import ch.heigvd.flight.api.model.Customer;
+import ch.heigvd.flight.entities.CustomersEntity;
 import ch.heigvd.flight.repositories.CustomersRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.swagger.annotations.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -37,24 +39,48 @@ public class CustomersApiController implements CustomersApi {
 
     public ResponseEntity<Void> addCustomer(@ApiParam(value = "a new customer to the flight manager" ,required=true )  @Valid @RequestBody Customer customer) {
 
-        return new ResponseEntity<Void>(HttpStatus.NOT_IMPLEMENTED);
+        CustomersEntity NewCustomer = new CustomersEntity();
+        NewCustomer.setCustomer_pseudo(customer.getCustomerPseudo());
+        NewCustomer.setFirstname(customer.getFirstname());
+        NewCustomer.setLastname(customer.getLastname());
+        NewCustomer.setAge(customer.getAge());
+        NewCustomer.setCustomer_pw(customer.getCustomerPw());
+        customersRepository.save(NewCustomer);
+
+        return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
     public ResponseEntity<Void> deleteCustomer(@ApiParam(value = "",required=true) @PathVariable("customer_id") Integer customerId) {
-
-        return new ResponseEntity<Void>(HttpStatus.NOT_IMPLEMENTED);
+        customersRepository.deleteById(customerId);
+        return ResponseEntity.status(HttpStatus.valueOf(201)).build();
     }
 
-    public ResponseEntity<Customer> getCustomer(@ApiParam(value = "",required=true) @PathVariable("customer_id") Integer customerId) {
+    public ResponseEntity<Customers> getCustomer(@ApiParam(value = "",required=true) @PathVariable("customer_id") Integer customerId) {
+        Customers customer = new Customers();
+        CustomersEntity customersEntity = customersRepository.findById(customerId);
+        customer = CustomersEntityToCustomers(customersEntity);
 
-
-        return new ResponseEntity<Customer>(HttpStatus.NOT_IMPLEMENTED);
+        return ResponseEntity.ok(customer);
     }
 
     public ResponseEntity<List<Customers>> getCustomers() {
+        Page<CustomersEntity> customersList = customersRepository.findAll();
+        List<Customers> customers = customersList.map(e -> CustomersEntityToCustomers(e)).toList();
 
+        return ResponseEntity.ok(customers);
+    }
 
-        return new ResponseEntity<List<Customers>>(HttpStatus.NOT_IMPLEMENTED);
+    private Customers CustomersEntityToCustomers(CustomersEntity customersEntity)
+    {
+        Customers customers = new Customers();
+        //customers.setCustomerId(customersEntity.getCustomer_id());
+        customers.setCustomerPseudo(customersEntity.getCustomer_pseudo());
+        customers.setFirstname(customersEntity.getFirstname());
+        customers.setLastname(customersEntity.getLastname());
+        customers.setAge(customersEntity.getAge());
+        customers.setCustomerPw(customersEntity.getCustomer_pw());
+
+        return customers;
     }
 
 }
